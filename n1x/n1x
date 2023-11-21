@@ -1,0 +1,139 @@
+#!@bash@/bin/bash
+
+# Prepare to use tools from Nixpkgs.
+PATH=@DEP_PATH@${PATH:+:}$PATH
+
+set -euo pipefail
+
+function setFlakeParam() {
+  local flake="${FLAKE_PARAM%#*}"
+
+  case $FLAKE_PARAM in
+    *#*)
+      local application="${FLAKE_PARAM#*#}"
+      ;;
+    *)
+      local application=""
+      ;;
+  esac
+
+  export FLAKE_ROOT="$flake"
+  export FLAKE_APPLICATION="$application"
+}
+
+function doBuild() {
+  setFlakeParam
+
+  if [[ -z "$FLAKE_APPLICATION" ]]; then
+    doHelp
+    exit 1
+  fi
+  
+  nix build "${FLAKE_ROOT}#n1xApplications.${NIX_SYSTEM}.apps.${FLAKE_APPLICATION}" "${BUILD_PARAMS[@]}"
+}
+
+function doRender() {
+  setFlakeParam
+
+  if [[ -z "$FLAKE_APPLICATION" ]]; then
+    doHelp
+    exit 1
+  fi
+
+  nix build "${FLAKE_ROOT}#n1xApplications.${NIX_SYSTEM}.apps.${FLAKE_APPLICATION}" \
+    --no-link --print-out-paths | xargs cat
+}
+
+function doList() {
+  setFlakeParam
+
+  nix eval "${FLAKE_ROOT}#n1xApplications.${NIX_SYSTEM}.meta" --json | \
+    jq -r 'to_entries[] | "\(.key) - \(.value.description)"'
+}
+
+function doHelp() {
+    echo "Usage: $0 [OPTION] COMMAND"
+    echo
+    echo "Options"
+    echo
+    echo "  --no-link         Don't create a result symlink (only used in build)."
+    echo "  --out-link PATH   Create a custom result symlink (only used in build)."
+    echo "  -h                Print this help"
+    echo
+    echo "Commands"
+    echo
+    echo "  help         Print this help."
+    echo
+    echo "  build FLAKE_URI"
+    echo "               Build n1x application from flake URI."
+    echo "               Example: .#argocd"
+    echo
+    echo "  render FLAKE_URI"
+    echo "               Build and output application from flake URI on stdout."
+    echo "               Example: .#argocd"
+    echo
+    echo "  list [FLAKE_URI]"
+    echo "               List available applications in a flake. If nothing is specified"
+    echo "               a local flake is used (i.e. .#)."
+    echo "               Example: github:arnarg/n1x#"
+}
+
+COMMAND=""
+FLAKE_PARAM=""
+
+BUILD_PARAMS=()
+
+while [[ $# -gt 0 ]]; do
+  opt="$1"
+  shift
+  case $opt in
+    build|render|list|help)
+      COMMAND="$opt"
+      ;;
+    --no-link)
+      BUILD_PARAMS+=("--no-link")
+      ;;
+    --out-link)
+      BUILD_PARAMS+=("--out-link" "$1")
+      shift
+      ;;
+    -h|--help)
+      doHelp
+      exit 0
+      ;;
+    *)
+      FLAKE_PARAM="$opt"
+      ;;
+  esac
+done
+
+if [[ -z $COMMAND ]]; then
+    doHelp >&2
+    exit 1
+fi
+
+if [[ -z $FLAKE_PARAM ]]; then
+  FLAKE_PARAM=".#"
+fi
+
+NIX_SYSTEM=$(nix eval --expr builtins.currentSystem --raw --impure)
+
+case $COMMAND in
+  build)
+    doBuild
+    ;;
+  render)
+    doRender
+    ;;
+  list)
+    doList
+    ;;
+  help)
+    doHelp
+    ;;
+  *)
+    _iError 'Unknown command: %s' "$COMMAND" >&2
+    doHelp >&2
+    exit 1
+    ;;
+esac
