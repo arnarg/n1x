@@ -507,10 +507,10 @@
   
 
 
-<h1 id="app-of-apps">App of Apps</h1>
+<h1 id="app-of-apps">App of Apps<a class="headerlink" href="#app-of-apps" title="Permanent link">#</a></h1>
 <p>There is a pattern in Argo CD for declaratively bootstrapping the entire cluster from a single application. This pattern is called <a href="https://argo-cd.readthedocs.io/en/stable/operator-manual/cluster-bootstrapping/#app-of-apps-pattern">App of Apps</a>.</p>
 <p>As with n1x all applications are declared within a single (modular) configuration, it's aware of all applications that are enabled. Therefore it can automatically generate an application with all other enabled applications (i.e. App of Apps).</p>
-<h2 id="enabling-app-of-apps">Enabling App of Apps</h2>
+<h2 id="enabling-app-of-apps">Enabling App of Apps<a class="headerlink" href="#enabling-app-of-apps" title="Permanent link">#</a></h2>
 <p>The App of Apps application is not enabled by default but can easily be enabled with the following configuration option.</p>
 <div class="highlight"><span class="filename">configuration.nix</span><pre><span></span><code><span class="p">{</span><span class="o">...</span><span class="p">}:</span> <span class="p">{</span>
   n1x<span class="o">.</span>appOfApps<span class="o">.</span><span class="ss">enable =</span> <span class="no">true</span><span class="p">;</span>

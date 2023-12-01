@@ -1415,8 +1415,8 @@
   
 
 
-<h1 id="configuration-options">Configuration Options</h1>
-<h2 id="applications">applications</h2>
+<h1 id="configuration-options">Configuration Options<a class="headerlink" href="#configuration-options" title="Permanent link">#</a></h1>
+<h2 id="applications">applications<a class="headerlink" href="#applications" title="Permanent link">#</a></h2>
 <p>An application describes a single Argo CD application that can be rendered using n1x.</p>
 <p>Usually the application is abstracted away behind a <code>services</code> option.</p>
 <p>It is used to render Kubernetes resources when running <code>n1x render</code> and appears in the list of applications when running <code>n1x list</code>.</p>
@@ -1443,7 +1443,7 @@ attribute set of (submodule)</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/applications.nix">&lt;n1x/modules/applications.nix&gt;</a></li>
 </ul>
-<h2 id="applicationsnamedescription">applications.&lt;name&gt;.description</h2>
+<h2 id="applicationsnamedescription">applications.&lt;name&gt;.description<a class="headerlink" href="#applicationsnamedescription" title="Permanent link">#</a></h2>
 <p>Description for the application.</p>
 <p><strong><em>Type:</em></strong>
 string</p>
@@ -1453,7 +1453,7 @@ string</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/applications.nix">&lt;n1x/modules/applications.nix&gt;</a></li>
 </ul>
-<h2 id="applicationsnameenable">applications.&lt;name&gt;.enable</h2>
+<h2 id="applicationsnameenable">applications.&lt;name&gt;.enable<a class="headerlink" href="#applicationsnameenable" title="Permanent link">#</a></h2>
 <p>Whether the application is enabled.</p>
 <p><strong><em>Type:</em></strong>
 boolean</p>
@@ -1463,7 +1463,7 @@ boolean</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/applications.nix">&lt;n1x/modules/applications.nix&gt;</a></li>
 </ul>
-<h2 id="applicationsnameinappofapps">applications.&lt;name&gt;.inAppOfApps</h2>
+<h2 id="applicationsnameinappofapps">applications.&lt;name&gt;.inAppOfApps<a class="headerlink" href="#applicationsnameinappofapps" title="Permanent link">#</a></h2>
 <p>Whether application should be a part of the app-of-apps application.</p>
 <p><strong><em>Type:</em></strong>
 boolean</p>
@@ -1473,7 +1473,7 @@ boolean</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/applications.nix">&lt;n1x/modules/applications.nix&gt;</a></li>
 </ul>
-<h2 id="applicationsnameinbootstrap">applications.&lt;name&gt;.inBootstrap</h2>
+<h2 id="applicationsnameinbootstrap">applications.&lt;name&gt;.inBootstrap<a class="headerlink" href="#applicationsnameinbootstrap" title="Permanent link">#</a></h2>
 <p>Whether application should be a part of the bootstrap application.</p>
 <p><strong><em>Type:</em></strong>
 boolean</p>
@@ -1483,7 +1483,7 @@ boolean</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/applications.nix">&lt;n1x/modules/applications.nix&gt;</a></li>
 </ul>
-<h2 id="applicationsnamename">applications.&lt;name&gt;.name</h2>
+<h2 id="applicationsnamename">applications.&lt;name&gt;.name<a class="headerlink" href="#applicationsnamename" title="Permanent link">#</a></h2>
 <p>Name of the application.</p>
 <p><strong><em>Type:</em></strong>
 string</p>
@@ -1493,7 +1493,7 @@ string</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/applications.nix">&lt;n1x/modules/applications.nix&gt;</a></li>
 </ul>
-<h2 id="applicationsnamenamespace">applications.&lt;name&gt;.namespace</h2>
+<h2 id="applicationsnamenamespace">applications.&lt;name&gt;.namespace<a class="headerlink" href="#applicationsnamenamespace" title="Permanent link">#</a></h2>
 <p>Namespace to deploy application into (defaults to name).</p>
 <p><strong><em>Type:</em></strong>
 string</p>
@@ -1503,7 +1503,7 @@ string</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/applications.nix">&lt;n1x/modules/applications.nix&gt;</a></li>
 </ul>
-<h2 id="applicationsnameproject">applications.&lt;name&gt;.project</h2>
+<h2 id="applicationsnameproject">applications.&lt;name&gt;.project<a class="headerlink" href="#applicationsnameproject" title="Permanent link">#</a></h2>
 <p>ArgoCD project to make application a part of.</p>
 <p><strong><em>Type:</em></strong>
 string</p>
@@ -1513,7 +1513,7 @@ string</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/applications.nix">&lt;n1x/modules/applications.nix&gt;</a></li>
 </ul>
-<h2 id="applicationsnameresources">applications.&lt;name&gt;.resources</h2>
+<h2 id="applicationsnameresources">applications.&lt;name&gt;.resources<a class="headerlink" href="#applicationsnameresources" title="Permanent link">#</a></h2>
 <p>Resources that make up the application.</p>
 <p>They should be declared in the form <code>&lt;apiVersion&gt;.&lt;kind&gt;.&lt;name&gt;</code>.</p>
 <p>For example the following namespace resource:</p>
@@ -1558,7 +1558,7 @@ attribute set of attribute set of attribute set of anything</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/applications.nix">&lt;n1x/modules/applications.nix&gt;</a></li>
 </ul>
-<h2 id="applicationsnamesyncpolicyautomatedprune">applications.&lt;name&gt;.syncPolicy.automated.prune</h2>
+<h2 id="applicationsnamesyncpolicyautomatedprune">applications.&lt;name&gt;.syncPolicy.automated.prune<a class="headerlink" href="#applicationsnamesyncpolicyautomatedprune" title="Permanent link">#</a></h2>
 <p>Specifies if resources should be pruned during auto-syncing.</p>
 <p><strong><em>Type:</em></strong>
 null or boolean</p>
@@ -1568,7 +1568,7 @@ null or boolean</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/applications.nix">&lt;n1x/modules/applications.nix&gt;</a></li>
 </ul>
-<h2 id="applicationsnamesyncpolicyautomatedselfheal">applications.&lt;name&gt;.syncPolicy.automated.selfHeal</h2>
+<h2 id="applicationsnamesyncpolicyautomatedselfheal">applications.&lt;name&gt;.syncPolicy.automated.selfHeal<a class="headerlink" href="#applicationsnamesyncpolicyautomatedselfheal" title="Permanent link">#</a></h2>
 <p>Specifies if partial app sync should be executed when resources are changed only in target Kubernetes cluster and no git change detected.</p>
 <p><strong><em>Type:</em></strong>
 null or boolean</p>
@@ -1578,7 +1578,7 @@ null or boolean</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/applications.nix">&lt;n1x/modules/applications.nix&gt;</a></li>
 </ul>
-<h2 id="n1xappofappsenable">n1x.appOfApps.enable</h2>
+<h2 id="n1xappofappsenable">n1x.appOfApps.enable<a class="headerlink" href="#n1xappofappsenable" title="Permanent link">#</a></h2>
 <p>Whether to enable the app-of-apps application.</p>
 <p><strong><em>Type:</em></strong>
 boolean</p>
@@ -1588,7 +1588,7 @@ boolean</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/n1x.nix">&lt;n1x/modules/n1x.nix&gt;</a></li>
 </ul>
-<h2 id="n1xappofappsname">n1x.appOfApps.name</h2>
+<h2 id="n1xappofappsname">n1x.appOfApps.name<a class="headerlink" href="#n1xappofappsname" title="Permanent link">#</a></h2>
 <p>Name of the app-of-apps applications.</p>
 <p><strong><em>Type:</em></strong>
 string</p>
@@ -1598,7 +1598,7 @@ string</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/n1x.nix">&lt;n1x/modules/n1x.nix&gt;</a></li>
 </ul>
-<h2 id="n1xappofappsrepository">n1x.appOfApps.repository</h2>
+<h2 id="n1xappofappsrepository">n1x.appOfApps.repository<a class="headerlink" href="#n1xappofappsrepository" title="Permanent link">#</a></h2>
 <p>The source repository url to put on all generated Argo CD Applications.</p>
 <p><strong><em>Type:</em></strong>
 string</p>
@@ -1606,7 +1606,7 @@ string</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/n1x.nix">&lt;n1x/modules/n1x.nix&gt;</a></li>
 </ul>
-<h2 id="n1xappofappsrevision">n1x.appOfApps.revision</h2>
+<h2 id="n1xappofappsrevision">n1x.appOfApps.revision<a class="headerlink" href="#n1xappofappsrevision" title="Permanent link">#</a></h2>
 <p>The target revision to put on all generated Argo CD Applications.</p>
 <p><strong><em>Type:</em></strong>
 string</p>
@@ -1616,7 +1616,7 @@ string</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/n1x.nix">&lt;n1x/modules/n1x.nix&gt;</a></li>
 </ul>
-<h2 id="n1xbootstrapenable">n1x.bootstrap.enable</h2>
+<h2 id="n1xbootstrapenable">n1x.bootstrap.enable<a class="headerlink" href="#n1xbootstrapenable" title="Permanent link">#</a></h2>
 <p>Whether to enable the bootstrap application.</p>
 <p><strong><em>Type:</em></strong>
 boolean</p>
@@ -1626,7 +1626,7 @@ boolean</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/n1x.nix">&lt;n1x/modules/n1x.nix&gt;</a></li>
 </ul>
-<h2 id="networkingciliumenableipv4">networking.cilium.enableIpv4</h2>
+<h2 id="networkingciliumenableipv4">networking.cilium.enableIpv4<a class="headerlink" href="#networkingciliumenableipv4" title="Permanent link">#</a></h2>
 <p>Enable IPv4 support in cilium.</p>
 <p><strong><em>Type:</em></strong>
 boolean</p>
@@ -1636,7 +1636,7 @@ boolean</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/networking/cilium.nix">&lt;n1x/modules/networking/cilium.nix&gt;</a></li>
 </ul>
-<h2 id="networkingciliumenableipv6">networking.cilium.enableIpv6</h2>
+<h2 id="networkingciliumenableipv6">networking.cilium.enableIpv6<a class="headerlink" href="#networkingciliumenableipv6" title="Permanent link">#</a></h2>
 <p>Enable IPv6 support in cilium.</p>
 <p><strong><em>Type:</em></strong>
 boolean</p>
@@ -1646,7 +1646,7 @@ boolean</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/networking/cilium.nix">&lt;n1x/modules/networking/cilium.nix&gt;</a></li>
 </ul>
-<h2 id="networkingciliumipammode">networking.cilium.ipamMode</h2>
+<h2 id="networkingciliumipammode">networking.cilium.ipamMode<a class="headerlink" href="#networkingciliumipammode" title="Permanent link">#</a></h2>
 <p>IP Address Management mode for cilium to use.</p>
 <p><strong><em>Type:</em></strong>
 one of "cluster-pool", "kubernetes", "eni"</p>
@@ -1656,7 +1656,7 @@ one of "cluster-pool", "kubernetes", "eni"</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/networking/cilium.nix">&lt;n1x/modules/networking/cilium.nix&gt;</a></li>
 </ul>
-<h2 id="networkingciliumnamespace">networking.cilium.namespace</h2>
+<h2 id="networkingciliumnamespace">networking.cilium.namespace<a class="headerlink" href="#networkingciliumnamespace" title="Permanent link">#</a></h2>
 <p>Destination namespace for cilium.</p>
 <p><strong><em>Type:</em></strong>
 string</p>
@@ -1666,7 +1666,7 @@ string</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/networking/cilium.nix">&lt;n1x/modules/networking/cilium.nix&gt;</a></li>
 </ul>
-<h2 id="networkingciliumpodcidrs">networking.cilium.podCidrs</h2>
+<h2 id="networkingciliumpodcidrs">networking.cilium.podCidrs<a class="headerlink" href="#networkingciliumpodcidrs" title="Permanent link">#</a></h2>
 <p>IPv4 CIDR list range to delegate to individual nodes for IPAM.</p>
 <p><strong><em>Type:</em></strong>
 list of string</p>
@@ -1676,7 +1676,7 @@ list of string</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/networking/cilium.nix">&lt;n1x/modules/networking/cilium.nix&gt;</a></li>
 </ul>
-<h2 id="networkingciliumpodcidrsv6">networking.cilium.podCidrsv6</h2>
+<h2 id="networkingciliumpodcidrsv6">networking.cilium.podCidrsv6<a class="headerlink" href="#networkingciliumpodcidrsv6" title="Permanent link">#</a></h2>
 <p>IPv6 CIDR mask size to delegate to individual nodes for IPAM.</p>
 <p><strong><em>Type:</em></strong>
 list of string</p>
@@ -1686,7 +1686,7 @@ list of string</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/networking/cilium.nix">&lt;n1x/modules/networking/cilium.nix&gt;</a></li>
 </ul>
-<h2 id="networkingciliumpolicyauditmode">networking.cilium.policyAuditMode</h2>
+<h2 id="networkingciliumpolicyauditmode">networking.cilium.policyAuditMode<a class="headerlink" href="#networkingciliumpolicyauditmode" title="Permanent link">#</a></h2>
 <p>Enable policy audit mode in cilium.</p>
 <p><strong><em>Type:</em></strong>
 boolean</p>
@@ -1696,7 +1696,7 @@ boolean</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/networking/cilium.nix">&lt;n1x/modules/networking/cilium.nix&gt;</a></li>
 </ul>
-<h2 id="networkingciliumpolicyenforcementmode">networking.cilium.policyEnforcementMode</h2>
+<h2 id="networkingciliumpolicyenforcementmode">networking.cilium.policyEnforcementMode<a class="headerlink" href="#networkingciliumpolicyenforcementmode" title="Permanent link">#</a></h2>
 <p>Policy enforcement mode for cilium to use.</p>
 <p>See: https://docs.cilium.io/en/latest/security/policy/intro/#policy-enforcement-modes</p>
 <p><strong><em>Type:</em></strong>
@@ -1707,7 +1707,7 @@ one of "default", "always", "never"</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/networking/cilium.nix">&lt;n1x/modules/networking/cilium.nix&gt;</a></li>
 </ul>
-<h2 id="networkingciliumvalues">networking.cilium.values</h2>
+<h2 id="networkingciliumvalues">networking.cilium.values<a class="headerlink" href="#networkingciliumvalues" title="Permanent link">#</a></h2>
 <p>Values to pass on to the cilium helm chart.</p>
 <p><strong><em>Type:</em></strong>
 attribute set of anything</p>
@@ -1717,7 +1717,7 @@ attribute set of anything</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/networking/cilium.nix">&lt;n1x/modules/networking/cilium.nix&gt;</a></li>
 </ul>
-<h2 id="networkingcni">networking.cni</h2>
+<h2 id="networkingcni">networking.cni<a class="headerlink" href="#networkingcni" title="Permanent link">#</a></h2>
 <p>Which CNI application to enable or none if <code>null</code>.</p>
 <p><strong><em>Type:</em></strong>
 null or one of "cilium", "flannel"</p>
@@ -1727,7 +1727,7 @@ null or one of "cilium", "flannel"</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/networking">&lt;n1x/modules/networking&gt;</a></li>
 </ul>
-<h2 id="networkingflannelbackend">networking.flannel.backend</h2>
+<h2 id="networkingflannelbackend">networking.flannel.backend<a class="headerlink" href="#networkingflannelbackend" title="Permanent link">#</a></h2>
 <p>Backend for kube-flannel.</p>
 <p>See: https://github.com/flannel-io/flannel/blob/master/Documentation/backends.md</p>
 <p><strong><em>Type:</em></strong>
@@ -1738,7 +1738,7 @@ one of "vxlan", "host-gw", "wireguard", "udp"</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/networking/flannel.nix">&lt;n1x/modules/networking/flannel.nix&gt;</a></li>
 </ul>
-<h2 id="networkingflannelbackendport">networking.flannel.backendPort</h2>
+<h2 id="networkingflannelbackendport">networking.flannel.backendPort<a class="headerlink" href="#networkingflannelbackendport" title="Permanent link">#</a></h2>
 <p>Port used by the backend. 0 means default value (VXLAN: 8472, Wireguard: 51821, UDP: 8285).</p>
 <p><strong><em>Type:</em></strong>
 16 bit unsigned integer; between 0 and 65535 (both inclusive)</p>
@@ -1748,7 +1748,7 @@ one of "vxlan", "host-gw", "wireguard", "udp"</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/networking/flannel.nix">&lt;n1x/modules/networking/flannel.nix&gt;</a></li>
 </ul>
-<h2 id="networkingflannelnamespace">networking.flannel.namespace</h2>
+<h2 id="networkingflannelnamespace">networking.flannel.namespace<a class="headerlink" href="#networkingflannelnamespace" title="Permanent link">#</a></h2>
 <p>Destination namespace for flannel.</p>
 <p><strong><em>Type:</em></strong>
 string</p>
@@ -1758,7 +1758,7 @@ string</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/networking/flannel.nix">&lt;n1x/modules/networking/flannel.nix&gt;</a></li>
 </ul>
-<h2 id="networkingflannelpodcidr">networking.flannel.podCidr</h2>
+<h2 id="networkingflannelpodcidr">networking.flannel.podCidr<a class="headerlink" href="#networkingflannelpodcidr" title="Permanent link">#</a></h2>
 <p>IPv4 CIDR to delegate to pods.</p>
 <p><strong><em>Type:</em></strong>
 string</p>
@@ -1768,7 +1768,7 @@ string</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/networking/flannel.nix">&lt;n1x/modules/networking/flannel.nix&gt;</a></li>
 </ul>
-<h2 id="networkingflannelpodcidrv6">networking.flannel.podCidrv6</h2>
+<h2 id="networkingflannelpodcidrv6">networking.flannel.podCidrv6<a class="headerlink" href="#networkingflannelpodcidrv6" title="Permanent link">#</a></h2>
 <p>IPv6 CIDR to delete got pods.</p>
 <p><strong><em>Type:</em></strong>
 string</p>
@@ -1778,7 +1778,7 @@ string</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/networking/flannel.nix">&lt;n1x/modules/networking/flannel.nix&gt;</a></li>
 </ul>
-<h2 id="networkingflannelvalues">networking.flannel.values</h2>
+<h2 id="networkingflannelvalues">networking.flannel.values<a class="headerlink" href="#networkingflannelvalues" title="Permanent link">#</a></h2>
 <p>Values to pass on to the flannel helm chart.</p>
 <p><strong><em>Type:</em></strong>
 attribute set of anything</p>
@@ -1788,7 +1788,7 @@ attribute set of anything</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/networking/flannel.nix">&lt;n1x/modules/networking/flannel.nix&gt;</a></li>
 </ul>
-<h2 id="servicesargocdenable">services.argocd.enable</h2>
+<h2 id="servicesargocdenable">services.argocd.enable<a class="headerlink" href="#servicesargocdenable" title="Permanent link">#</a></h2>
 <p>Whether to enable argocd.</p>
 <p><strong><em>Type:</em></strong>
 boolean</p>
@@ -1800,7 +1800,7 @@ boolean</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/services/argocd.nix">&lt;n1x/modules/services/argocd.nix&gt;</a></li>
 </ul>
-<h2 id="servicesargocdingressenable">services.argocd.ingress.enable</h2>
+<h2 id="servicesargocdingressenable">services.argocd.ingress.enable<a class="headerlink" href="#servicesargocdingressenable" title="Permanent link">#</a></h2>
 <p>Create an ingress for argocd-server.</p>
 <p><strong><em>Type:</em></strong>
 boolean</p>
@@ -1810,7 +1810,7 @@ boolean</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/services/argocd.nix">&lt;n1x/modules/services/argocd.nix&gt;</a></li>
 </ul>
-<h2 id="servicesargocdingresshosts">services.argocd.ingress.hosts</h2>
+<h2 id="servicesargocdingresshosts">services.argocd.ingress.hosts<a class="headerlink" href="#servicesargocdingresshosts" title="Permanent link">#</a></h2>
 <p>Hostnames to put in the argocd-server ingress.</p>
 <p><strong><em>Type:</em></strong>
 list of string</p>
@@ -1820,7 +1820,7 @@ list of string</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/services/argocd.nix">&lt;n1x/modules/services/argocd.nix&gt;</a></li>
 </ul>
-<h2 id="servicesargocdingressingressclass">services.argocd.ingress.ingressClass</h2>
+<h2 id="servicesargocdingressingressclass">services.argocd.ingress.ingressClass<a class="headerlink" href="#servicesargocdingressingressclass" title="Permanent link">#</a></h2>
 <p>Ingress class to set on the ingress for argocd-server.</p>
 <p><strong><em>Type:</em></strong>
 string</p>
@@ -1830,7 +1830,7 @@ string</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/services/argocd.nix">&lt;n1x/modules/services/argocd.nix&gt;</a></li>
 </ul>
-<h2 id="servicesargocdn1xpluginenable">services.argocd.n1xPlugin.enable</h2>
+<h2 id="servicesargocdn1xpluginenable">services.argocd.n1xPlugin.enable<a class="headerlink" href="#servicesargocdn1xpluginenable" title="Permanent link">#</a></h2>
 <p>Whether to automatically add the n1x config management plugin to Argo CD.</p>
 <p><strong><em>Type:</em></strong>
 boolean</p>
@@ -1840,7 +1840,7 @@ boolean</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/services/argocd.nix">&lt;n1x/modules/services/argocd.nix&gt;</a></li>
 </ul>
-<h2 id="servicesargocdn1xpluginimage">services.argocd.n1xPlugin.image</h2>
+<h2 id="servicesargocdn1xpluginimage">services.argocd.n1xPlugin.image<a class="headerlink" href="#servicesargocdn1xpluginimage" title="Permanent link">#</a></h2>
 <p>The image to use in the Argo CD config management plugin sidecar.</p>
 <p><strong><em>Type:</em></strong>
 string</p>
@@ -1850,7 +1850,7 @@ string</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/services/argocd.nix">&lt;n1x/modules/services/argocd.nix&gt;</a></li>
 </ul>
-<h2 id="servicesargocdnamespace">services.argocd.namespace</h2>
+<h2 id="servicesargocdnamespace">services.argocd.namespace<a class="headerlink" href="#servicesargocdnamespace" title="Permanent link">#</a></h2>
 <p>Destination namespace for argocd.</p>
 <p><strong><em>Type:</em></strong>
 string</p>
@@ -1860,7 +1860,7 @@ string</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/services/argocd.nix">&lt;n1x/modules/services/argocd.nix&gt;</a></li>
 </ul>
-<h2 id="servicesargocdvalues">services.argocd.values</h2>
+<h2 id="servicesargocdvalues">services.argocd.values<a class="headerlink" href="#servicesargocdvalues" title="Permanent link">#</a></h2>
 <p>Values to pass on to the argo-cd helm chart.</p>
 <p><strong><em>Type:</em></strong>
 attribute set of anything</p>
@@ -1870,7 +1870,7 @@ attribute set of anything</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/services/argocd.nix">&lt;n1x/modules/services/argocd.nix&gt;</a></li>
 </ul>
-<h2 id="servicescloudflare-operatorenable">services.cloudflare-operator.enable</h2>
+<h2 id="servicescloudflare-operatorenable">services.cloudflare-operator.enable<a class="headerlink" href="#servicescloudflare-operatorenable" title="Permanent link">#</a></h2>
 <p>Whether to enable cloudflare-operator.</p>
 <p><strong><em>Type:</em></strong>
 boolean</p>
@@ -1882,7 +1882,7 @@ boolean</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/services/cloudflare-operator.nix">&lt;n1x/modules/services/cloudflare-operator.nix&gt;</a></li>
 </ul>
-<h2 id="servicescloudflare-operatornamespace">services.cloudflare-operator.namespace</h2>
+<h2 id="servicescloudflare-operatornamespace">services.cloudflare-operator.namespace<a class="headerlink" href="#servicescloudflare-operatornamespace" title="Permanent link">#</a></h2>
 <p>Destination namespace for cloudflare-operator.</p>
 <p><strong><em>Type:</em></strong>
 string</p>
@@ -1892,7 +1892,7 @@ string</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/services/cloudflare-operator.nix">&lt;n1x/modules/services/cloudflare-operator.nix&gt;</a></li>
 </ul>
-<h2 id="servicesk8s-gatewaydomain">services.k8s-gateway.domain</h2>
+<h2 id="servicesk8s-gatewaydomain">services.k8s-gateway.domain<a class="headerlink" href="#servicesk8s-gatewaydomain" title="Permanent link">#</a></h2>
 <p>Delegated domain for k8s_gateway to use.</p>
 <p><strong><em>Type:</em></strong>
 string</p>
@@ -1900,7 +1900,7 @@ string</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/services/k8s-gateway.nix">&lt;n1x/modules/services/k8s-gateway.nix&gt;</a></li>
 </ul>
-<h2 id="servicesk8s-gatewayenable">services.k8s-gateway.enable</h2>
+<h2 id="servicesk8s-gatewayenable">services.k8s-gateway.enable<a class="headerlink" href="#servicesk8s-gatewayenable" title="Permanent link">#</a></h2>
 <p>Whether to enable k8s-gateway.</p>
 <p><strong><em>Type:</em></strong>
 boolean</p>
@@ -1912,7 +1912,7 @@ boolean</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/services/k8s-gateway.nix">&lt;n1x/modules/services/k8s-gateway.nix&gt;</a></li>
 </ul>
-<h2 id="servicesk8s-gatewaynamespace">services.k8s-gateway.namespace</h2>
+<h2 id="servicesk8s-gatewaynamespace">services.k8s-gateway.namespace<a class="headerlink" href="#servicesk8s-gatewaynamespace" title="Permanent link">#</a></h2>
 <p>Destination namespace for k8s-gateway.</p>
 <p><strong><em>Type:</em></strong>
 string</p>
@@ -1922,7 +1922,7 @@ string</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/services/k8s-gateway.nix">&lt;n1x/modules/services/k8s-gateway.nix&gt;</a></li>
 </ul>
-<h2 id="servicesk8s-gatewayvalues">services.k8s-gateway.values</h2>
+<h2 id="servicesk8s-gatewayvalues">services.k8s-gateway.values<a class="headerlink" href="#servicesk8s-gatewayvalues" title="Permanent link">#</a></h2>
 <p>Values to pass on to the k8s-gateway helm chart.</p>
 <p><strong><em>Type:</em></strong>
 attribute set of anything</p>
@@ -1932,7 +1932,7 @@ attribute set of anything</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/services/k8s-gateway.nix">&lt;n1x/modules/services/k8s-gateway.nix&gt;</a></li>
 </ul>
-<h2 id="servicestailscale-operatorenable">services.tailscale-operator.enable</h2>
+<h2 id="servicestailscale-operatorenable">services.tailscale-operator.enable<a class="headerlink" href="#servicestailscale-operatorenable" title="Permanent link">#</a></h2>
 <p>Whether to enable tailscale-operator.</p>
 <p><strong><em>Type:</em></strong>
 boolean</p>
@@ -1944,7 +1944,7 @@ boolean</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/services/tailscale-operator.nix">&lt;n1x/modules/services/tailscale-operator.nix&gt;</a></li>
 </ul>
-<h2 id="servicestailscale-operatornamespace">services.tailscale-operator.namespace</h2>
+<h2 id="servicestailscale-operatornamespace">services.tailscale-operator.namespace<a class="headerlink" href="#servicestailscale-operatornamespace" title="Permanent link">#</a></h2>
 <p>Destination namespace for tailscale-operator.</p>
 <p><strong><em>Type:</em></strong>
 string</p>
@@ -1954,7 +1954,7 @@ string</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/services/tailscale-operator.nix">&lt;n1x/modules/services/tailscale-operator.nix&gt;</a></li>
 </ul>
-<h2 id="servicestailscale-operatorvalues">services.tailscale-operator.values</h2>
+<h2 id="servicestailscale-operatorvalues">services.tailscale-operator.values<a class="headerlink" href="#servicestailscale-operatorvalues" title="Permanent link">#</a></h2>
 <p>Values to pass on to the tailscale-operator helm chart.</p>
 <p><strong><em>Type:</em></strong>
 attribute set of anything</p>
@@ -1964,7 +1964,7 @@ attribute set of anything</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/services/tailscale-operator.nix">&lt;n1x/modules/services/tailscale-operator.nix&gt;</a></li>
 </ul>
-<h2 id="servicestraefikenable">services.traefik.enable</h2>
+<h2 id="servicestraefikenable">services.traefik.enable<a class="headerlink" href="#servicestraefikenable" title="Permanent link">#</a></h2>
 <p>Whether to enable traefik.</p>
 <p><strong><em>Type:</em></strong>
 boolean</p>
@@ -1976,7 +1976,7 @@ boolean</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/services/traefik.nix">&lt;n1x/modules/services/traefik.nix&gt;</a></li>
 </ul>
-<h2 id="servicestraefikingressclassenable">services.traefik.ingressClass.enable</h2>
+<h2 id="servicestraefikingressclassenable">services.traefik.ingressClass.enable<a class="headerlink" href="#servicestraefikingressclassenable" title="Permanent link">#</a></h2>
 <p>Enable creating an ingress class resource for traefik.</p>
 <p><strong><em>Type:</em></strong>
 boolean</p>
@@ -1986,7 +1986,7 @@ boolean</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/services/traefik.nix">&lt;n1x/modules/services/traefik.nix&gt;</a></li>
 </ul>
-<h2 id="servicestraefikingressclassisdefaultclass">services.traefik.ingressClass.isDefaultClass</h2>
+<h2 id="servicestraefikingressclassisdefaultclass">services.traefik.ingressClass.isDefaultClass<a class="headerlink" href="#servicestraefikingressclassisdefaultclass" title="Permanent link">#</a></h2>
 <p>Set traefik ingress class as the default one.</p>
 <p><strong><em>Type:</em></strong>
 boolean</p>
@@ -1996,7 +1996,7 @@ boolean</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/services/traefik.nix">&lt;n1x/modules/services/traefik.nix&gt;</a></li>
 </ul>
-<h2 id="servicestraefikingressclassname">services.traefik.ingressClass.name</h2>
+<h2 id="servicestraefikingressclassname">services.traefik.ingressClass.name<a class="headerlink" href="#servicestraefikingressclassname" title="Permanent link">#</a></h2>
 <p>The name of the ingress class for traefik.</p>
 <p><strong><em>Type:</em></strong>
 string</p>
@@ -2006,7 +2006,7 @@ string</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/services/traefik.nix">&lt;n1x/modules/services/traefik.nix&gt;</a></li>
 </ul>
-<h2 id="servicestraefiknamespace">services.traefik.namespace</h2>
+<h2 id="servicestraefiknamespace">services.traefik.namespace<a class="headerlink" href="#servicestraefiknamespace" title="Permanent link">#</a></h2>
 <p>Destination namespace for traefik.</p>
 <p><strong><em>Type:</em></strong>
 string</p>
@@ -2016,7 +2016,7 @@ string</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/services/traefik.nix">&lt;n1x/modules/services/traefik.nix&gt;</a></li>
 </ul>
-<h2 id="servicestraefikvalues">services.traefik.values</h2>
+<h2 id="servicestraefikvalues">services.traefik.values<a class="headerlink" href="#servicestraefikvalues" title="Permanent link">#</a></h2>
 <p>Values to pass on to the traefik helm chart.</p>
 <p><strong><em>Type:</em></strong>
 attribute set of anything</p>
@@ -2026,7 +2026,7 @@ attribute set of anything</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/services/traefik.nix">&lt;n1x/modules/services/traefik.nix&gt;</a></li>
 </ul>
-<h2 id="storagecsinfsdrivername">storage.csi.nfs.driverName</h2>
+<h2 id="storagecsinfsdrivername">storage.csi.nfs.driverName<a class="headerlink" href="#storagecsinfsdrivername" title="Permanent link">#</a></h2>
 <p>Name of the driver when deployed in the Kubernetes cluster.</p>
 <p><strong><em>Type:</em></strong>
 string</p>
@@ -2036,7 +2036,7 @@ string</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/storage/nfs.nix">&lt;n1x/modules/storage/nfs.nix&gt;</a></li>
 </ul>
-<h2 id="storagecsinfsenable">storage.csi.nfs.enable</h2>
+<h2 id="storagecsinfsenable">storage.csi.nfs.enable<a class="headerlink" href="#storagecsinfsenable" title="Permanent link">#</a></h2>
 <p>Whether to enable nfs-csi-driver.</p>
 <p><strong><em>Type:</em></strong>
 boolean</p>
@@ -2048,7 +2048,7 @@ boolean</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/storage/nfs.nix">&lt;n1x/modules/storage/nfs.nix&gt;</a></li>
 </ul>
-<h2 id="storagecsinfsnamespace">storage.csi.nfs.namespace</h2>
+<h2 id="storagecsinfsnamespace">storage.csi.nfs.namespace<a class="headerlink" href="#storagecsinfsnamespace" title="Permanent link">#</a></h2>
 <p>Destination namespace for csi-driver-nfs.</p>
 <p><strong><em>Type:</em></strong>
 string</p>
@@ -2058,7 +2058,7 @@ string</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/storage/nfs.nix">&lt;n1x/modules/storage/nfs.nix&gt;</a></li>
 </ul>
-<h2 id="storagecsinfsstorageclassenable">storage.csi.nfs.storageClass.enable</h2>
+<h2 id="storagecsinfsstorageclassenable">storage.csi.nfs.storageClass.enable<a class="headerlink" href="#storagecsinfsstorageclassenable" title="Permanent link">#</a></h2>
 <p>Automatically create a StorageClass for csi-driver-nfs.</p>
 <p><strong><em>Type:</em></strong>
 boolean</p>
@@ -2068,7 +2068,7 @@ boolean</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/storage/nfs.nix">&lt;n1x/modules/storage/nfs.nix&gt;</a></li>
 </ul>
-<h2 id="storagecsinfsstorageclassmountoptions">storage.csi.nfs.storageClass.mountOptions</h2>
+<h2 id="storagecsinfsstorageclassmountoptions">storage.csi.nfs.storageClass.mountOptions<a class="headerlink" href="#storagecsinfsstorageclassmountoptions" title="Permanent link">#</a></h2>
 <p>Extra options to pass on when mounting the NFS share.</p>
 <p><strong><em>Type:</em></strong>
 list of string</p>
@@ -2080,7 +2080,7 @@ list of string</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/storage/nfs.nix">&lt;n1x/modules/storage/nfs.nix&gt;</a></li>
 </ul>
-<h2 id="storagecsinfsstorageclassname">storage.csi.nfs.storageClass.name</h2>
+<h2 id="storagecsinfsstorageclassname">storage.csi.nfs.storageClass.name<a class="headerlink" href="#storagecsinfsstorageclassname" title="Permanent link">#</a></h2>
 <p>Name of the StorageClass to create for csi-driver-nfs.</p>
 <p><strong><em>Type:</em></strong>
 string</p>
@@ -2090,7 +2090,7 @@ string</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/storage/nfs.nix">&lt;n1x/modules/storage/nfs.nix&gt;</a></li>
 </ul>
-<h2 id="storagecsinfsstorageclassreclaimpolicy">storage.csi.nfs.storageClass.reclaimPolicy</h2>
+<h2 id="storagecsinfsstorageclassreclaimpolicy">storage.csi.nfs.storageClass.reclaimPolicy<a class="headerlink" href="#storagecsinfsstorageclassreclaimpolicy" title="Permanent link">#</a></h2>
 <p>Reclaim policy to use for the StorageClass for csi-driver-nfs.</p>
 <p><strong><em>Type:</em></strong>
 one of "Delete", "Retain"</p>
@@ -2100,7 +2100,7 @@ one of "Delete", "Retain"</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/storage/nfs.nix">&lt;n1x/modules/storage/nfs.nix&gt;</a></li>
 </ul>
-<h2 id="storagecsinfsstorageclassserver">storage.csi.nfs.storageClass.server</h2>
+<h2 id="storagecsinfsstorageclassserver">storage.csi.nfs.storageClass.server<a class="headerlink" href="#storagecsinfsstorageclassserver" title="Permanent link">#</a></h2>
 <p>NFS server address to use to connect to.</p>
 <p><strong><em>Type:</em></strong>
 string</p>
@@ -2108,7 +2108,7 @@ string</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/storage/nfs.nix">&lt;n1x/modules/storage/nfs.nix&gt;</a></li>
 </ul>
-<h2 id="storagecsinfsstorageclassshare">storage.csi.nfs.storageClass.share</h2>
+<h2 id="storagecsinfsstorageclassshare">storage.csi.nfs.storageClass.share<a class="headerlink" href="#storagecsinfsstorageclassshare" title="Permanent link">#</a></h2>
 <p>NFS share on the server to use for csi-driver-nfs.</p>
 <p><strong><em>Type:</em></strong>
 string</p>
@@ -2116,7 +2116,7 @@ string</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/storage/nfs.nix">&lt;n1x/modules/storage/nfs.nix&gt;</a></li>
 </ul>
-<h2 id="storagecsinfsstorageclassvolumebindingmode">storage.csi.nfs.storageClass.volumeBindingMode</h2>
+<h2 id="storagecsinfsstorageclassvolumebindingmode">storage.csi.nfs.storageClass.volumeBindingMode<a class="headerlink" href="#storagecsinfsstorageclassvolumebindingmode" title="Permanent link">#</a></h2>
 <p>VolumeBindingMode indicates how PersistentVolumeClaims should be provisioned and bound.</p>
 <p><strong><em>Type:</em></strong>
 one of "Immediate", "WaitForFirstConsumer"</p>
@@ -2126,7 +2126,7 @@ one of "Immediate", "WaitForFirstConsumer"</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/storage/nfs.nix">&lt;n1x/modules/storage/nfs.nix&gt;</a></li>
 </ul>
-<h2 id="storagecsinfsvalues">storage.csi.nfs.values</h2>
+<h2 id="storagecsinfsvalues">storage.csi.nfs.values<a class="headerlink" href="#storagecsinfsvalues" title="Permanent link">#</a></h2>
 <p>Values to pass on to the csi-driver-nfs chart.</p>
 <p><strong><em>Type:</em></strong>
 attribute set of anything</p>

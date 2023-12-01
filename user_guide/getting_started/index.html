@@ -535,9 +535,9 @@
   
 
 
-<h1 id="getting-started">Getting Started</h1>
+<h1 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">#</a></h1>
 <p>The use of n1x requires nix flakes.</p>
-<h2 id="initialize-repository">Initialize Repository</h2>
+<h2 id="initialize-repository">Initialize Repository<a class="headerlink" href="#initialize-repository" title="Permanent link">#</a></h2>
 <p>First you will need to create a <code>flake.nix</code> in the root of the cluster repository.</p>
 <div class="highlight"><span class="filename">flake.nix</span><pre><span></span><code><span class="p">{</span>
   <span class="ss">description =</span> <span class="s2">&quot;My ArgoCD configuration with n1x.&quot;</span><span class="p">;</span>
@@ -598,14 +598,14 @@
   <span class="p">};</span>
 <span class="p">}</span>
 </code></pre></div>
-<h2 id="list-available-applications">List available applications</h2>
+<h2 id="list-available-applications">List available applications<a class="headerlink" href="#list-available-applications" title="Permanent link">#</a></h2>
 <p>After you have enabled some services in the example config above you can run the following command in the root of the repository to list applications that are enabled and deployable.</p>
 <div class="highlight"><pre><span></span><code>&gt;&gt;<span class="w"> </span>nix<span class="w"> </span>run<span class="w"> </span>github:arnarg/n1x#<span class="w"> </span>--<span class="w"> </span>list
 argocd<span class="w"> </span>-<span class="w"> </span>Argo<span class="w"> </span>CD<span class="w"> </span>is<span class="w"> </span>a<span class="w"> </span>declarative,<span class="w"> </span>GitOps<span class="w"> </span>continuous<span class="w"> </span>delivery<span class="w"> </span>tool<span class="w"> </span><span class="k">for</span><span class="w"> </span>Kubernetes.
 cilium<span class="w"> </span>-<span class="w"> </span>eBPF-based<span class="w"> </span>Networking,<span class="w"> </span>Security,<span class="w"> </span>and<span class="w"> </span>Observability.
 csi-driver-nfs<span class="w"> </span>-<span class="w"> </span>CSI<span class="w"> </span>Kubernetes<span class="w"> </span>storage<span class="w"> </span>driver<span class="w"> </span>to<span class="w"> </span>use<span class="w"> </span>NFS<span class="w"> </span>server<span class="w"> </span><span class="k">for</span><span class="w"> </span>persistent<span class="w"> </span>volumes.
 </code></pre></div>
-<h2 id="render-a-single-application">Render a single application</h2>
+<h2 id="render-a-single-application">Render a single application<a class="headerlink" href="#render-a-single-application" title="Permanent link">#</a></h2>
 <p>From the list above we can discover applications that can be rendered with n1x.</p>
 <div class="highlight"><pre><span></span><code>&gt;&gt;<span class="w"> </span>nix<span class="w"> </span>run<span class="w"> </span>github:arnarg/n1x#<span class="w"> </span>--<span class="w"> </span>render<span class="w"> </span>.#argocd
 apiVersion:<span class="w"> </span>v1

@@ -651,24 +651,24 @@
   
 
 
-<h1 id="n1x">n1x</h1>
+<h1 id="n1x">n1x<a class="headerlink" href="#n1x" title="Permanent link">#</a></h1>
 <p>Configure your Kubernetes cluster like it's NixOS.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Under active development. Things will change.</p>
 </div>
-<h2 id="why">Why?</h2>
+<h2 id="why">Why?<a class="headerlink" href="#why" title="Permanent link">#</a></h2>
 <p>It's desirable to manage Kubernetes clusters in a declarative way using a git repository as a source of truth for manifests that should be deployed into the cluster. One popular solution that is often used to achieve this goal is <a href="https://argo-cd.readthedocs.io/en/stable/">Argo CD</a>.</p>
-<h3 id="argo-cd">Argo CD</h3>
+<h3 id="argo-cd">Argo CD<a class="headerlink" href="#argo-cd" title="Permanent link">#</a></h3>
 <p>Argo CD has a concept of applications. Each application has an entrypoint somewhere in your git repository that is either a Helm chart, kustomize application, jsonnet files or just a directory of YAML files. All the resources that are output when templating the helm chart, kustomizing the kustomize application or are defined in the YAML files in the directory, make up the application and are (usually) deployed into a single namespace.</p>
 <p>For these reasons these git repositories often need quite elaborate designs once many applications should be deployed, requiring use of application sets (generator for applications) or custom Helm charts just to render all the different applications of the repository.</p>
-<h3 id="nixos">NixOS</h3>
+<h3 id="nixos">NixOS<a class="headerlink" href="#nixos" title="Permanent link">#</a></h3>
 <p>When looking at the module system of NixOS, an application in Argo CD might be comparable to a single systemd service in NixOS (declared with option <code>systemd.services.&lt;name&gt;</code>: <a href="https://search.nixos.org/options?channel=unstable&amp;from=0&amp;size=50&amp;sort=relevance&amp;type=packages&amp;query=systemd.services">docs</a>).</p>
 <p>But users of NixOS aren't creating systemd services manually unless they're creating their own manual modules. Instead available pre-configured services are abstacted away into options such as <code>services.postgresql</code> or <code>programs.git</code> (this one doesn't create a systemd service but adds git to the system path and writes some configs).</p>
-<h3 id="n1x_1">n1x</h3>
+<h3 id="n1x_1">n1x<a class="headerlink" href="#n1x_1" title="Permanent link">#</a></h3>
 <p>The idea of n1x is then to answer the question: What if we could configure our entire GitOps repository for Argo CD using a NixOS-like module system that abstracts away the creation of applications behind (hopefully) friendlier options with a (hopefully) community driven repository of applications.</p>
 <p>As a bonus of all the applications being defined in a single (modular) configuration, n1x can automatically generate an <a href="https://argo-cd.readthedocs.io/en/stable/operator-manual/cluster-bootstrapping/#app-of-apps-pattern">App of Apps</a> removing the need to manually discover all the different applications that Argo CD should manage.</p>
-<h4 id="example-configuration">Example Configuration</h4>
+<h4 id="example-configuration">Example Configuration<a class="headerlink" href="#example-configuration" title="Permanent link">#</a></h4>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>config<span class="p">,</span> <span class="o">...</span><span class="p">}:</span> <span class="k">let</span>
   <span class="ss">domain =</span> <span class="s2">&quot;mydomain.com&quot;</span><span class="p">;</span>
 <span class="k">in</span> <span class="p">{</span>
@@ -694,12 +694,12 @@
   <span class="p">};</span>
 <span class="p">}</span>
 </code></pre></div>
-<h2 id="non-goals">Non Goals</h2>
-<h3 id="typed-resource-definitions">Typed Resource Definitions</h3>
+<h2 id="non-goals">Non Goals<a class="headerlink" href="#non-goals" title="Permanent link">#</a></h2>
+<h3 id="typed-resource-definitions">Typed Resource Definitions<a class="headerlink" href="#typed-resource-definitions" title="Permanent link">#</a></h3>
 <p>n1x does not concern itself with defining typed options for every possible Kubernetes resource like is done with <a href="https://github.com/hall/kubenix">kubenix</a>. This approach requires automatic generation from JSON schemas of all supported resources, and needs to be updated for every new release of Kubernetes.</p>
 <p>That also means that it will explicitly need to support every different CRD from applications it wants to deploy.</p>
 <p>Instead it allows for outputing any structure as long as it's under <code>&lt;apiVersion&gt;.&lt;kind&gt;.&lt;name&gt;</code> and let Argo CD surface the error if the data is not a valid resource.</p>
-<h3 id="define-resources-for-all-applications">Define Resources for all Applications</h3>
+<h3 id="define-resources-for-all-applications">Define Resources for all Applications<a class="headerlink" href="#define-resources-for-all-applications" title="Permanent link">#</a></h3>
 <p>I do not want to define the required resources to deploy an application that I need to then maintain down the line if an official Helm chart or kustomize application already exists.</p>
 <p>Instead we should use those Helm charts or kustomize applications as a base to work on top of.</p>
 <p>Example:</p>
@@ -803,7 +803,7 @@
   <span class="p">};</span>
 <span class="p">}</span>
 </code></pre></div>
-<h2 id="special-thanks">Special Thanks</h2>
+<h2 id="special-thanks">Special Thanks<a class="headerlink" href="#special-thanks" title="Permanent link">#</a></h2>
 <p><a href="https://github.com/farcaller/nix-kube-generators">farcaller/nix-kube-generators</a> is used internally to pull and render Helm charts and the library is re-exposed under <code>lib.kube</code> in the modules.</p>
 
 
