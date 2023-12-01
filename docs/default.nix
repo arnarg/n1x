@@ -133,6 +133,8 @@
               name: Switch to light mode
 
         markdown_extensions:
+        - toc:
+            permalink: "#"
         - admonition
         - pymdownx.highlight
         - pymdownx.inlinehilite
