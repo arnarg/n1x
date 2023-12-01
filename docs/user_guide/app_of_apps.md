@@ -19,7 +19,7 @@ The App of Apps application is not enabled by default but can easily be enabled 
 And now when listing available applications the `apps` application has been added to the list. The name of the application can be changed with `n1x.appOfApps.name`.
 
 ```bash
->> n1x list .#
+>> nix run github:arnarg/n1x# -- list .#
 apps - Argo CD app-of-apps with all applications that have inAppOfApps enabled.
 argocd - Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
 cilium - eBPF-based Networking, Security, and Observability.
@@ -29,7 +29,7 @@ csi-driver-nfs - CSI Kubernetes storage driver to use NFS server for persistent 
 And rendering this application will output Argo CD `Application`s for all of the listed applications.
 
 ```bash
->> n1x render .#apps
+>> nix run github:arnarg/n1x# -- render .#apps
 apiVersion: argoproj.io/v1alpha1                                               
 kind: Application                                                              
 metadata:                                                                      

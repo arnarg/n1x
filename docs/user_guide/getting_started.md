@@ -75,7 +75,7 @@ And a `configuration.nix`.
 After you have enabled some services in the example config above you can run the following command in the root of the repository to list applications that are enabled and deployable.
 
 ```bash
->> n1x list .#
+>> nix run github:arnarg/n1x# -- list
 argocd - Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
 cilium - eBPF-based Networking, Security, and Observability.
 csi-driver-nfs - CSI Kubernetes storage driver to use NFS server for persistent volumes.
@@ -86,7 +86,7 @@ csi-driver-nfs - CSI Kubernetes storage driver to use NFS server for persistent 
 From the list above we can discover applications that can be rendered with n1x.
 
 ```bash
->> n1x render .#argocd
+>> nix run github:arnarg/n1x# -- render .#argocd
 apiVersion: v1
 kind: Namespace
 metadata:
