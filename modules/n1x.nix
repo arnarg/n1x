@@ -60,17 +60,17 @@ in {
                 repoURL = cfg.appOfApps.repository;
                 targetRevision = cfg.appOfApps.revision;
                 path = ".";
+                plugin.parameters = [
+                  {
+                    name = "application";
+                    string = cfg.appOfApps.name;
+                  }
+                ];
               };
               destination = {
                 server = "https://kubernetes.default.svc";
                 namespace = config.services.argocd.namespace;
               };
-              plugin.parameters = [
-                {
-                  name = "application";
-                  string = cfg.appOfApps.name;
-                }
-              ];
             };
           };
         }
@@ -95,17 +95,17 @@ in {
                   repoURL = cfg.appOfApps.repository;
                   targetRevision = cfg.appOfApps.revision;
                   path = ".";
+                  plugin.parameters = [
+                    {
+                      name = "application";
+                      string = app.name;
+                    }
+                  ];
                 };
                 destination = {
                   server = "https://kubernetes.default.svc";
                   namespace = app.namespace;
                 };
-                plugin.parameters = [
-                  {
-                    name = "application";
-                    string = app.name;
-                  }
-                ];
               };
             }
           )
