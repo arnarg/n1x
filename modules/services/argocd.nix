@@ -22,7 +22,7 @@ in {
         };
         image = mkOption {
           type = types.str;
-          default = "granra/n1x-argocd-cmp-plugin:latest";
+          default = "ghcr.io/arnarg/n1x/argocd-cmp-plugin:latest";
           description = "The image to use in the Argo CD config management plugin sidecar.";
         };
       };
