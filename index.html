@@ -1,0 +1,852 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://arnarg.github.io/n1x/">
+      
+      
+      
+        <link rel="next" href="user_guide/getting_started/">
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.3.1">
+    
+    
+      
+        <title>n1x</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.046329b4.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.85d0ee34.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#n1x" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="n1x" class="md-header__button md-logo" aria-label="n1x" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            n1x
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Home
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/arnarg/n1x/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="n1x" class="md-nav__button md-logo" aria-label="n1x" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    n1x
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/arnarg/n1x/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why" class="md-nav__link">
+    Why?
+  </a>
+  
+    <nav class="md-nav" aria-label="Why?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#argo-cd" class="md-nav__link">
+    Argo CD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nixos" class="md-nav__link">
+    NixOS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#n1x_1" class="md-nav__link">
+    n1x
+  </a>
+  
+    <nav class="md-nav" aria-label="n1x">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-configuration" class="md-nav__link">
+    Example Configuration
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#non-goals" class="md-nav__link">
+    Non Goals
+  </a>
+  
+    <nav class="md-nav" aria-label="Non Goals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#typed-resource-definitions" class="md-nav__link">
+    Typed Resource Definitions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#define-resources-for-all-applications" class="md-nav__link">
+    Define Resources for all Applications
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#special-thanks" class="md-nav__link">
+    Special Thanks
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    User Guide
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            User Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="user_guide/getting_started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="user_guide/app_of_apps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    App of Apps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Reference
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="options/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuration Options
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why" class="md-nav__link">
+    Why?
+  </a>
+  
+    <nav class="md-nav" aria-label="Why?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#argo-cd" class="md-nav__link">
+    Argo CD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nixos" class="md-nav__link">
+    NixOS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#n1x_1" class="md-nav__link">
+    n1x
+  </a>
+  
+    <nav class="md-nav" aria-label="n1x">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-configuration" class="md-nav__link">
+    Example Configuration
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#non-goals" class="md-nav__link">
+    Non Goals
+  </a>
+  
+    <nav class="md-nav" aria-label="Non Goals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#typed-resource-definitions" class="md-nav__link">
+    Typed Resource Definitions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#define-resources-for-all-applications" class="md-nav__link">
+    Define Resources for all Applications
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#special-thanks" class="md-nav__link">
+    Special Thanks
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="n1x">n1x</h1>
+<p>Configure your Kubernetes cluster like it's NixOS.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Under active development. Things will change.</p>
+</div>
+<h2 id="why">Why?</h2>
+<p>It's desirable to manage Kubernetes clusters in a declarative way using a git repository as a source of truth for manifests that should be deployed into the cluster. One popular solution that is often used to achieve this goal is <a href="https://argo-cd.readthedocs.io/en/stable/">Argo CD</a>.</p>
+<h3 id="argo-cd">Argo CD</h3>
+<p>Argo CD has a concept of applications. Each application has an entrypoint somewhere in your git repository that is either a Helm chart, kustomize application, jsonnet files or just a directory of YAML files. All the resources that are output when templating the helm chart, kustomizing the kustomize application or are defined in the YAML files in the directory, make up the application and are (usually) deployed into a single namespace.</p>
+<p>For these reasons these git repositories often need quite elaborate designs once many applications should be deployed, requiring use of application sets (generator for applications) or custom Helm charts just to render all the different applications of the repository.</p>
+<h3 id="nixos">NixOS</h3>
+<p>When looking at the module system of NixOS, an application in Argo CD might be comparable to a single systemd service in NixOS (declared with option <code>systemd.services.&lt;name&gt;</code>: <a href="https://search.nixos.org/options?channel=unstable&amp;from=0&amp;size=50&amp;sort=relevance&amp;type=packages&amp;query=systemd.services">docs</a>).</p>
+<p>But users of NixOS aren't creating systemd services manually unless they're creating their own manual modules. Instead available pre-configured services are abstacted away into options such as <code>services.postgresql</code> or <code>programs.git</code> (this one doesn't create a systemd service but adds git to the system path and writes some configs).</p>
+<h3 id="n1x_1">n1x</h3>
+<p>The idea of n1x is then to answer the question: What if we could configure our entire GitOps repository for Argo CD using a NixOS-like module system that abstracts away the creation of applications behind (hopefully) friendlier options with a (hopefully) community driven repository of applications.</p>
+<p>As a bonus of all the applications being defined in a single (modular) configuration, n1x can automatically generate an <a href="https://argo-cd.readthedocs.io/en/stable/operator-manual/cluster-bootstrapping/#app-of-apps-pattern">App of Apps</a> removing the need to manually discover all the different applications that Argo CD should manage.</p>
+<h4 id="example-configuration">Example Configuration</h4>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>config<span class="p">,</span> <span class="o">...</span><span class="p">}:</span> <span class="k">let</span>
+  <span class="ss">domain =</span> <span class="s2">&quot;mydomain.com&quot;</span><span class="p">;</span>
+<span class="k">in</span> <span class="p">{</span>
+  <span class="c1"># Enable Cilium CNI application</span>
+  networking<span class="o">.</span><span class="ss">cni =</span> <span class="s2">&quot;cilium&quot;</span><span class="p">;</span>
+
+  <span class="c1"># Configure Cilium to use the default k3s pod cidr</span>
+  networking<span class="o">.</span>cilium<span class="o">.</span><span class="ss">podCidrs =</span> <span class="p">[</span><span class="s2">&quot;10.42.0.0/16&quot;</span><span class="p">];</span>
+
+  <span class="c1"># Enable traefik as ingress controller</span>
+  services<span class="o">.</span>traefik<span class="o">.</span><span class="ss">enable =</span> <span class="no">true</span><span class="p">;</span>
+
+  <span class="c1"># Enable Argo CD</span>
+  services<span class="o">.</span>argocd<span class="o">.</span><span class="ss">enable =</span> <span class="no">true</span><span class="p">;</span>
+
+  <span class="c1"># Create an Ingress for Argo CD web UI</span>
+  services<span class="o">.</span>argocd<span class="o">.</span><span class="ss">ingress =</span> <span class="p">{</span>
+    <span class="ss">enable =</span> <span class="no">true</span><span class="p">;</span>
+    <span class="ss">hosts =</span> <span class="p">[</span><span class="s2">&quot;argocd.</span><span class="si">${</span>domain<span class="si">}</span><span class="s2">&quot;</span><span class="p">];</span>
+
+    <span class="c1"># Reference an option from another service&#39;s option</span>
+    <span class="ss">ingressClass =</span> config<span class="o">.</span>services<span class="o">.</span>traefik<span class="o">.</span>ingressClass<span class="o">.</span>name<span class="p">;</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="non-goals">Non Goals</h2>
+<h3 id="typed-resource-definitions">Typed Resource Definitions</h3>
+<p>n1x does not concern itself with defining typed options for every possible Kubernetes resource like is done with <a href="https://github.com/hall/kubenix">kubenix</a>. This approach requires automatic generation from JSON schemas of all supported resources, and needs to be updated for every new release of Kubernetes.</p>
+<p>That also means that it will explicitly need to support every different CRD from applications it wants to deploy.</p>
+<p>Instead it allows for outputing any structure as long as it's under <code>&lt;apiVersion&gt;.&lt;kind&gt;.&lt;name&gt;</code> and let Argo CD surface the error if the data is not a valid resource.</p>
+<h3 id="define-resources-for-all-applications">Define Resources for all Applications</h3>
+<p>I do not want to define the required resources to deploy an application that I need to then maintain down the line if an official Helm chart or kustomize application already exists.</p>
+<p>Instead we should use those Helm charts or kustomize applications as a base to work on top of.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+  lib<span class="p">,</span>
+  config<span class="p">,</span>
+  <span class="o">...</span>
+<span class="p">}:</span> <span class="k">let</span>
+  <span class="ss">cfg =</span> config<span class="o">.</span>services<span class="o">.</span>argocd<span class="p">;</span>
+
+  <span class="c1"># Downloads a helm chart and creation a derivation with the</span>
+  <span class="c1"># chart data (this function comes from nix-kube-generators,</span>
+  <span class="c1"># see special thanks on the bottom of this page).</span>
+  <span class="ss">chart =</span> lib<span class="o">.</span>kube<span class="o">.</span>downloadHelmChart <span class="p">{</span>
+    <span class="ss">repo =</span> <span class="s2">&quot;https://argoproj.github.io/argo-helm/&quot;</span><span class="p">;</span>
+    <span class="ss">chart =</span> <span class="s2">&quot;argo-cd&quot;</span><span class="p">;</span>
+    <span class="ss">version =</span> <span class="s2">&quot;5.51.4&quot;</span><span class="p">;</span>
+    <span class="ss">chartHash =</span> <span class="s2">&quot;sha256-e2aREkDbLtD1bC/dAEHPeqnmHLG+Ch3RTMxQSWPP5PY=&quot;</span><span class="p">;</span>
+  <span class="p">};</span>
+<span class="k">in</span> <span class="p">{</span>
+  options<span class="o">.</span>services<span class="o">.</span><span class="ss">argocd =</span> <span class="k">with</span> lib<span class="p">;</span> <span class="p">{</span>
+    <span class="c1"># Allow the user a simple enable flag to add the Argo CD</span>
+    <span class="c1"># application to the cluster.</span>
+    <span class="ss">enable =</span> mkEnableOption <span class="s2">&quot;argocd&quot;</span><span class="p">;</span>
+    <span class="ss">namespace =</span> mkOption <span class="p">{</span>
+      <span class="ss">type =</span> types<span class="o">.</span>str<span class="p">;</span>
+      <span class="ss">default =</span> <span class="s2">&quot;argocd&quot;</span><span class="p">;</span>
+      <span class="ss">description =</span> <span class="s2">&quot;Destination namespace for ArgoCD.&quot;</span><span class="p">;</span>
+    <span class="p">};</span>
+    <span class="c1"># Expose useful configuration options that can be set</span>
+    <span class="c1"># without knowing the syntax of the underlying Helm</span>
+    <span class="c1"># value file.</span>
+    <span class="ss">ingress =</span> <span class="p">{</span>
+      <span class="ss">enable =</span> mkOption <span class="p">{</span>
+        <span class="ss">type =</span> types<span class="o">.</span>bool<span class="p">;</span>
+        <span class="ss">default =</span> <span class="no">false</span><span class="p">;</span>
+        <span class="ss">description =</span> <span class="s2">&quot;Create an ingress for argocd-server.&quot;</span><span class="p">;</span>
+      <span class="p">};</span>
+      <span class="ss">host =</span> mkOption <span class="p">{</span>
+        <span class="ss">type =</span> types<span class="o">.</span>nullOr types<span class="o">.</span>str<span class="p">;</span>
+        <span class="ss">default =</span> <span class="no">null</span><span class="p">;</span>
+        <span class="ss">description =</span> <span class="s2">&quot;Hostname to put in the argocd-server ingress.&quot;</span><span class="p">;</span>
+      <span class="p">};</span>
+      <span class="ss">ingressClass =</span> mkOption <span class="p">{</span>
+        <span class="ss">type =</span> types<span class="o">.</span>nullOr types<span class="o">.</span>str<span class="p">;</span>
+        <span class="ss">default =</span> <span class="no">null</span><span class="p">;</span>
+        <span class="ss">description =</span> <span class="s2">&quot;Ingress class to set on the ingress for argocd-server.&quot;</span><span class="p">;</span>
+      <span class="p">};</span>
+    <span class="p">};</span>
+    <span class="c1"># But also allow passing the underlying Helm values</span>
+    <span class="c1"># so the user isn&#39;t limited if they need to set custom</span>
+    <span class="c1"># options.</span>
+    <span class="ss">values =</span> mkOption <span class="p">{</span>
+      <span class="ss">type =</span> types<span class="o">.</span>attrsOf types<span class="o">.</span>anything<span class="p">;</span>
+      <span class="ss">default =</span> <span class="p">{};</span>
+      <span class="ss">description =</span> <span class="s2">&quot;Values to pass on to the argo-cd helm chart.&quot;</span><span class="p">;</span>
+    <span class="p">};</span>
+  <span class="p">};</span>
+
+  <span class="ss">config =</span> lib<span class="o">.</span>mkIf cfg<span class="o">.</span>enable <span class="p">{</span>
+    applications<span class="o">.</span><span class="ss">argocd =</span> <span class="p">{</span>
+      <span class="ss">description =</span> <span class="s2">&quot;Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.&quot;</span><span class="p">;</span>
+      <span class="ss">namespace =</span> cfg<span class="o">.</span>namespace<span class="p">;</span>
+      <span class="ss">resources =</span> lib<span class="o">.</span>mkMerge <span class="p">[</span>
+        <span class="c1"># Render and parse the resources from a Helm chart.</span>
+        lib<span class="o">.</span>kube<span class="o">.</span>renderHelmChart <span class="p">{</span>
+          <span class="ss">name =</span> <span class="s2">&quot;argocd&quot;</span><span class="p">;</span>
+          <span class="ss">namespace =</span> cfg<span class="o">.</span>namespace<span class="p">;</span>
+          <span class="ss">chart =</span> chart<span class="p">;</span>
+          <span class="ss">values =</span> <span class="p">{</span>
+            <span class="c1"># Set custom values set with n1x options.</span>
+            server<span class="o">.</span>ingress<span class="o">.</span><span class="ss">enabled =</span> cfg<span class="o">.</span>ingress<span class="o">.</span>enable<span class="p">;</span>
+            server<span class="o">.</span>ingress<span class="o">.</span><span class="ss">hosts =</span> lib<span class="o">.</span>optional
+              <span class="p">(</span><span class="o">!</span><span class="nb">builtins</span><span class="o">.</span><span class="nb">isNull</span> cfg<span class="o">.</span>ingress<span class="o">.</span>host<span class="p">)</span> cfg<span class="o">.</span>ingress<span class="o">.</span>host<span class="p">;</span>
+          <span class="p">}</span>
+          <span class="c1"># But also merge values set with n1x option.</span>
+          <span class="o">//</span> cfg<span class="o">.</span>values<span class="p">;</span>
+        <span class="p">}</span>
+        <span class="p">(</span>lib<span class="o">.</span>mkIf <span class="p">(</span><span class="o">!</span><span class="nb">builtins</span><span class="o">.</span><span class="nb">isNull</span> cfg<span class="o">.</span>ingress<span class="o">.</span>ingressClass<span class="p">)</span> <span class="p">{</span>
+          <span class="s2">&quot;networking.k8s.io/v1&quot;</span><span class="o">.</span>Ingress<span class="o">.</span><span class="ss">argocd-server-ingress =</span> <span class="p">{</span>
+            <span class="c1"># Merge the resources with custom options that may not</span>
+            <span class="c1"># be possible to set with the Helm chart&#39;s values.</span>
+            spec<span class="o">.</span><span class="ss">ingressClassName =</span> cfg<span class="o">.</span>ingress<span class="o">.</span>ingressClass<span class="p">;</span>
+          <span class="p">};</span>
+        <span class="p">})</span>
+      <span class="p">];</span>
+    <span class="p">};</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Then the user of n1x only needs to set a few options:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>config<span class="p">,</span> <span class="o">...</span><span class="p">}:</span> <span class="p">{</span>
+  services<span class="o">.</span><span class="ss">argocd =</span> <span class="p">{</span>
+    <span class="ss">enable =</span> <span class="no">true</span><span class="p">;</span>
+    <span class="ss">ingress =</span> <span class="p">{</span>
+      <span class="ss">enable =</span> <span class="no">true</span><span class="p">;</span>
+      <span class="ss">host =</span> <span class="s2">&quot;argocd.mydomain.com&quot;</span><span class="p">;</span>
+      <span class="c1"># Reference options across applications.</span>
+      <span class="ss">ingressClass =</span> config<span class="o">.</span>services<span class="o">.</span>traefik<span class="o">.</span>ingressClassName<span class="p">;</span>
+    <span class="p">};</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="special-thanks">Special Thanks</h2>
+<p><a href="https://github.com/farcaller/nix-kube-generators">farcaller/nix-kube-generators</a> is used internally to pull and render Helm charts and the library is re-exposed under <code>lib.kube</code> in the modules.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": ".", "features": ["content.code.annotate"], "search": "assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2183 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://arnarg.github.io/n1x/options/">
+      
+      
+        <link rel="prev" href="../user_guide/app_of_apps/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.3.1">
+    
+    
+      
+        <title>Configuration Options - n1x</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.046329b4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.85d0ee34.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#configuration-options" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="n1x" class="md-header__button md-logo" aria-label="n1x" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            n1x
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Configuration Options
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/arnarg/n1x/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="n1x" class="md-nav__button md-logo" aria-label="n1x" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    n1x
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/arnarg/n1x/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    User Guide
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            User Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_guide/getting_started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_guide/app_of_apps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    App of Apps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Reference
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Configuration Options
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Configuration Options
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#applications" class="md-nav__link">
+    applications
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applicationsnamedescription" class="md-nav__link">
+    applications.&lt;name&gt;.description
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applicationsnameenable" class="md-nav__link">
+    applications.&lt;name&gt;.enable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applicationsnameinappofapps" class="md-nav__link">
+    applications.&lt;name&gt;.inAppOfApps
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applicationsnameinbootstrap" class="md-nav__link">
+    applications.&lt;name&gt;.inBootstrap
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applicationsnamename" class="md-nav__link">
+    applications.&lt;name&gt;.name
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applicationsnamenamespace" class="md-nav__link">
+    applications.&lt;name&gt;.namespace
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applicationsnameproject" class="md-nav__link">
+    applications.&lt;name&gt;.project
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applicationsnameresources" class="md-nav__link">
+    applications.&lt;name&gt;.resources
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applicationsnamesyncpolicyautomatedprune" class="md-nav__link">
+    applications.&lt;name&gt;.syncPolicy.automated.prune
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applicationsnamesyncpolicyautomatedselfheal" class="md-nav__link">
+    applications.&lt;name&gt;.syncPolicy.automated.selfHeal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#n1xappofappsenable" class="md-nav__link">
+    n1x.appOfApps.enable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#n1xappofappsname" class="md-nav__link">
+    n1x.appOfApps.name
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#n1xappofappsrepository" class="md-nav__link">
+    n1x.appOfApps.repository
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#n1xappofappsrevision" class="md-nav__link">
+    n1x.appOfApps.revision
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#n1xbootstrapenable" class="md-nav__link">
+    n1x.bootstrap.enable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networkingciliumenableipv4" class="md-nav__link">
+    networking.cilium.enableIpv4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networkingciliumenableipv6" class="md-nav__link">
+    networking.cilium.enableIpv6
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networkingciliumipammode" class="md-nav__link">
+    networking.cilium.ipamMode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networkingciliumnamespace" class="md-nav__link">
+    networking.cilium.namespace
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networkingciliumpodcidrs" class="md-nav__link">
+    networking.cilium.podCidrs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networkingciliumpodcidrsv6" class="md-nav__link">
+    networking.cilium.podCidrsv6
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networkingciliumpolicyauditmode" class="md-nav__link">
+    networking.cilium.policyAuditMode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networkingciliumpolicyenforcementmode" class="md-nav__link">
+    networking.cilium.policyEnforcementMode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networkingciliumvalues" class="md-nav__link">
+    networking.cilium.values
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networkingcni" class="md-nav__link">
+    networking.cni
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networkingflannelbackend" class="md-nav__link">
+    networking.flannel.backend
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networkingflannelbackendport" class="md-nav__link">
+    networking.flannel.backendPort
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networkingflannelnamespace" class="md-nav__link">
+    networking.flannel.namespace
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networkingflannelpodcidr" class="md-nav__link">
+    networking.flannel.podCidr
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networkingflannelpodcidrv6" class="md-nav__link">
+    networking.flannel.podCidrv6
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networkingflannelvalues" class="md-nav__link">
+    networking.flannel.values
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicesargocdenable" class="md-nav__link">
+    services.argocd.enable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicesargocdingressenable" class="md-nav__link">
+    services.argocd.ingress.enable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicesargocdingresshosts" class="md-nav__link">
+    services.argocd.ingress.hosts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicesargocdingressingressclass" class="md-nav__link">
+    services.argocd.ingress.ingressClass
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicesargocdn1xpluginenable" class="md-nav__link">
+    services.argocd.n1xPlugin.enable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicesargocdn1xpluginimage" class="md-nav__link">
+    services.argocd.n1xPlugin.image
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicesargocdnamespace" class="md-nav__link">
+    services.argocd.namespace
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicesargocdvalues" class="md-nav__link">
+    services.argocd.values
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicescloudflare-operatorenable" class="md-nav__link">
+    services.cloudflare-operator.enable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicescloudflare-operatornamespace" class="md-nav__link">
+    services.cloudflare-operator.namespace
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicesk8s-gatewaydomain" class="md-nav__link">
+    services.k8s-gateway.domain
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicesk8s-gatewayenable" class="md-nav__link">
+    services.k8s-gateway.enable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicesk8s-gatewaynamespace" class="md-nav__link">
+    services.k8s-gateway.namespace
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicesk8s-gatewayvalues" class="md-nav__link">
+    services.k8s-gateway.values
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicestailscale-operatorenable" class="md-nav__link">
+    services.tailscale-operator.enable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicestailscale-operatornamespace" class="md-nav__link">
+    services.tailscale-operator.namespace
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicestailscale-operatorvalues" class="md-nav__link">
+    services.tailscale-operator.values
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicestraefikenable" class="md-nav__link">
+    services.traefik.enable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicestraefikingressclassenable" class="md-nav__link">
+    services.traefik.ingressClass.enable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicestraefikingressclassisdefaultclass" class="md-nav__link">
+    services.traefik.ingressClass.isDefaultClass
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicestraefikingressclassname" class="md-nav__link">
+    services.traefik.ingressClass.name
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicestraefiknamespace" class="md-nav__link">
+    services.traefik.namespace
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicestraefikvalues" class="md-nav__link">
+    services.traefik.values
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storagecsinfsdrivername" class="md-nav__link">
+    storage.csi.nfs.driverName
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storagecsinfsenable" class="md-nav__link">
+    storage.csi.nfs.enable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storagecsinfsnamespace" class="md-nav__link">
+    storage.csi.nfs.namespace
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storagecsinfsstorageclassenable" class="md-nav__link">
+    storage.csi.nfs.storageClass.enable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storagecsinfsstorageclassmountoptions" class="md-nav__link">
+    storage.csi.nfs.storageClass.mountOptions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storagecsinfsstorageclassname" class="md-nav__link">
+    storage.csi.nfs.storageClass.name
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storagecsinfsstorageclassreclaimpolicy" class="md-nav__link">
+    storage.csi.nfs.storageClass.reclaimPolicy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storagecsinfsstorageclassserver" class="md-nav__link">
+    storage.csi.nfs.storageClass.server
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storagecsinfsstorageclassshare" class="md-nav__link">
+    storage.csi.nfs.storageClass.share
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storagecsinfsstorageclassvolumebindingmode" class="md-nav__link">
+    storage.csi.nfs.storageClass.volumeBindingMode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storagecsinfsvalues" class="md-nav__link">
+    storage.csi.nfs.values
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#applications" class="md-nav__link">
+    applications
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applicationsnamedescription" class="md-nav__link">
+    applications.&lt;name&gt;.description
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applicationsnameenable" class="md-nav__link">
+    applications.&lt;name&gt;.enable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applicationsnameinappofapps" class="md-nav__link">
+    applications.&lt;name&gt;.inAppOfApps
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applicationsnameinbootstrap" class="md-nav__link">
+    applications.&lt;name&gt;.inBootstrap
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applicationsnamename" class="md-nav__link">
+    applications.&lt;name&gt;.name
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applicationsnamenamespace" class="md-nav__link">
+    applications.&lt;name&gt;.namespace
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applicationsnameproject" class="md-nav__link">
+    applications.&lt;name&gt;.project
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applicationsnameresources" class="md-nav__link">
+    applications.&lt;name&gt;.resources
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applicationsnamesyncpolicyautomatedprune" class="md-nav__link">
+    applications.&lt;name&gt;.syncPolicy.automated.prune
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applicationsnamesyncpolicyautomatedselfheal" class="md-nav__link">
+    applications.&lt;name&gt;.syncPolicy.automated.selfHeal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#n1xappofappsenable" class="md-nav__link">
+    n1x.appOfApps.enable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#n1xappofappsname" class="md-nav__link">
+    n1x.appOfApps.name
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#n1xappofappsrepository" class="md-nav__link">
+    n1x.appOfApps.repository
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#n1xappofappsrevision" class="md-nav__link">
+    n1x.appOfApps.revision
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#n1xbootstrapenable" class="md-nav__link">
+    n1x.bootstrap.enable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networkingciliumenableipv4" class="md-nav__link">
+    networking.cilium.enableIpv4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networkingciliumenableipv6" class="md-nav__link">
+    networking.cilium.enableIpv6
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networkingciliumipammode" class="md-nav__link">
+    networking.cilium.ipamMode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networkingciliumnamespace" class="md-nav__link">
+    networking.cilium.namespace
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networkingciliumpodcidrs" class="md-nav__link">
+    networking.cilium.podCidrs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networkingciliumpodcidrsv6" class="md-nav__link">
+    networking.cilium.podCidrsv6
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networkingciliumpolicyauditmode" class="md-nav__link">
+    networking.cilium.policyAuditMode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networkingciliumpolicyenforcementmode" class="md-nav__link">
+    networking.cilium.policyEnforcementMode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networkingciliumvalues" class="md-nav__link">
+    networking.cilium.values
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networkingcni" class="md-nav__link">
+    networking.cni
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networkingflannelbackend" class="md-nav__link">
+    networking.flannel.backend
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networkingflannelbackendport" class="md-nav__link">
+    networking.flannel.backendPort
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networkingflannelnamespace" class="md-nav__link">
+    networking.flannel.namespace
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networkingflannelpodcidr" class="md-nav__link">
+    networking.flannel.podCidr
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networkingflannelpodcidrv6" class="md-nav__link">
+    networking.flannel.podCidrv6
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networkingflannelvalues" class="md-nav__link">
+    networking.flannel.values
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicesargocdenable" class="md-nav__link">
+    services.argocd.enable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicesargocdingressenable" class="md-nav__link">
+    services.argocd.ingress.enable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicesargocdingresshosts" class="md-nav__link">
+    services.argocd.ingress.hosts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicesargocdingressingressclass" class="md-nav__link">
+    services.argocd.ingress.ingressClass
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicesargocdn1xpluginenable" class="md-nav__link">
+    services.argocd.n1xPlugin.enable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicesargocdn1xpluginimage" class="md-nav__link">
+    services.argocd.n1xPlugin.image
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicesargocdnamespace" class="md-nav__link">
+    services.argocd.namespace
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicesargocdvalues" class="md-nav__link">
+    services.argocd.values
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicescloudflare-operatorenable" class="md-nav__link">
+    services.cloudflare-operator.enable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicescloudflare-operatornamespace" class="md-nav__link">
+    services.cloudflare-operator.namespace
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicesk8s-gatewaydomain" class="md-nav__link">
+    services.k8s-gateway.domain
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicesk8s-gatewayenable" class="md-nav__link">
+    services.k8s-gateway.enable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicesk8s-gatewaynamespace" class="md-nav__link">
+    services.k8s-gateway.namespace
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicesk8s-gatewayvalues" class="md-nav__link">
+    services.k8s-gateway.values
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicestailscale-operatorenable" class="md-nav__link">
+    services.tailscale-operator.enable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicestailscale-operatornamespace" class="md-nav__link">
+    services.tailscale-operator.namespace
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicestailscale-operatorvalues" class="md-nav__link">
+    services.tailscale-operator.values
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicestraefikenable" class="md-nav__link">
+    services.traefik.enable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicestraefikingressclassenable" class="md-nav__link">
+    services.traefik.ingressClass.enable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicestraefikingressclassisdefaultclass" class="md-nav__link">
+    services.traefik.ingressClass.isDefaultClass
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicestraefikingressclassname" class="md-nav__link">
+    services.traefik.ingressClass.name
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicestraefiknamespace" class="md-nav__link">
+    services.traefik.namespace
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicestraefikvalues" class="md-nav__link">
+    services.traefik.values
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storagecsinfsdrivername" class="md-nav__link">
+    storage.csi.nfs.driverName
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storagecsinfsenable" class="md-nav__link">
+    storage.csi.nfs.enable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storagecsinfsnamespace" class="md-nav__link">
+    storage.csi.nfs.namespace
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storagecsinfsstorageclassenable" class="md-nav__link">
+    storage.csi.nfs.storageClass.enable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storagecsinfsstorageclassmountoptions" class="md-nav__link">
+    storage.csi.nfs.storageClass.mountOptions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storagecsinfsstorageclassname" class="md-nav__link">
+    storage.csi.nfs.storageClass.name
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storagecsinfsstorageclassreclaimpolicy" class="md-nav__link">
+    storage.csi.nfs.storageClass.reclaimPolicy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storagecsinfsstorageclassserver" class="md-nav__link">
+    storage.csi.nfs.storageClass.server
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storagecsinfsstorageclassshare" class="md-nav__link">
+    storage.csi.nfs.storageClass.share
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storagecsinfsstorageclassvolumebindingmode" class="md-nav__link">
+    storage.csi.nfs.storageClass.volumeBindingMode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storagecsinfsvalues" class="md-nav__link">
+    storage.csi.nfs.values
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="configuration-options">Configuration Options</h1>
+<h2 id="applications">applications</h2>
+<p>An application describes a single Argo CD application that can be rendered using n1x.</p>
+<p>Usually the application is abstracted away behind a <code>services</code> option.</p>
+<p>It is used to render Kubernetes resources when running <code>n1x render</code> and appears in the list of applications when running <code>n1x list</code>.</p>
+<p><strong><em>Type:</em></strong>
+attribute set of (submodule)</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="p">{</span> <span class="p">}</span></code></p>
+<p><strong><em>Example:</em></strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="ss">argocd =</span> <span class="p">{</span>
+    <span class="ss">description =</span> <span class="s2">&quot;Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.&quot;</span><span class="p">;</span>
+    <span class="ss">namespace =</span> <span class="s2">&quot;argocd&quot;</span><span class="p">;</span>
+    <span class="ss">resources =</span> <span class="p">{</span>
+      <span class="ss">v1 =</span> <span class="p">{</span>
+        <span class="ss">Namespace =</span> <span class="p">{</span>
+          <span class="ss">argocd =</span> <span class="p">{</span> <span class="p">};</span>
+        <span class="p">};</span>
+      <span class="p">};</span>
+    <span class="p">};</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/applications.nix">&lt;n1x/modules/applications.nix&gt;</a></li>
+</ul>
+<h2 id="applicationsnamedescription">applications.&lt;name&gt;.description</h2>
+<p>Description for the application.</p>
+<p><strong><em>Type:</em></strong>
+string</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="s2">&quot;&quot;</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/applications.nix">&lt;n1x/modules/applications.nix&gt;</a></li>
+</ul>
+<h2 id="applicationsnameenable">applications.&lt;name&gt;.enable</h2>
+<p>Whether the application is enabled.</p>
+<p><strong><em>Type:</em></strong>
+boolean</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="no">true</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/applications.nix">&lt;n1x/modules/applications.nix&gt;</a></li>
+</ul>
+<h2 id="applicationsnameinappofapps">applications.&lt;name&gt;.inAppOfApps</h2>
+<p>Whether application should be a part of the app-of-apps application.</p>
+<p><strong><em>Type:</em></strong>
+boolean</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="no">true</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/applications.nix">&lt;n1x/modules/applications.nix&gt;</a></li>
+</ul>
+<h2 id="applicationsnameinbootstrap">applications.&lt;name&gt;.inBootstrap</h2>
+<p>Whether application should be a part of the bootstrap application.</p>
+<p><strong><em>Type:</em></strong>
+boolean</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="no">false</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/applications.nix">&lt;n1x/modules/applications.nix&gt;</a></li>
+</ul>
+<h2 id="applicationsnamename">applications.&lt;name&gt;.name</h2>
+<p>Name of the application.</p>
+<p><strong><em>Type:</em></strong>
+string</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="s2">&quot;‹name›&quot;</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/applications.nix">&lt;n1x/modules/applications.nix&gt;</a></li>
+</ul>
+<h2 id="applicationsnamenamespace">applications.&lt;name&gt;.namespace</h2>
+<p>Namespace to deploy application into (defaults to name).</p>
+<p><strong><em>Type:</em></strong>
+string</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="s2">&quot;‹name›&quot;</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/applications.nix">&lt;n1x/modules/applications.nix&gt;</a></li>
+</ul>
+<h2 id="applicationsnameproject">applications.&lt;name&gt;.project</h2>
+<p>ArgoCD project to make application a part of.</p>
+<p><strong><em>Type:</em></strong>
+string</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="s2">&quot;default&quot;</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/applications.nix">&lt;n1x/modules/applications.nix&gt;</a></li>
+</ul>
+<h2 id="applicationsnameresources">applications.&lt;name&gt;.resources</h2>
+<p>Resources that make up the application.</p>
+<p>They should be declared in the form <code>&lt;apiVersion&gt;.&lt;kind&gt;.&lt;name&gt;</code>.</p>
+<p>For example the following namespace resource:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Namespace</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">argocd</span>
+</code></pre></div>
+<p>Would be declared in like this:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+  v1<span class="o">.</span>Namespace<span class="o">.</span><span class="ss">argocd =</span> <span class="p">{</span>
+    <span class="c1"># This is redundant as `metadata.name` defaults</span>
+    <span class="c1"># to the name of the attribute for the resource.</span>
+    metadata<span class="o">.</span><span class="ss">name =</span> <span class="s2">&quot;argocd&quot;</span><span class="p">;</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong><em>Type:</em></strong>
+attribute set of attribute set of attribute set of anything</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="p">{</span> <span class="p">}</span></code></p>
+<p><strong><em>Example:</em></strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="ss">v1 =</span> <span class="p">{</span>
+    <span class="ss">ConfigMap =</span> <span class="p">{</span>
+      <span class="ss">argocd-cmd-params-cm =</span> <span class="p">{</span>
+        <span class="ss">data =</span> <span class="p">{</span>
+          <span class="s2">&quot;server.insecure&quot;</span> <span class="o">=</span> <span class="s2">&quot;true&quot;</span><span class="p">;</span>
+        <span class="p">};</span>
+        <span class="ss">metadata =</span> <span class="p">{</span>
+          <span class="ss">namespace =</span> <span class="s2">&quot;argocd&quot;</span><span class="p">;</span>
+        <span class="p">};</span>
+      <span class="p">};</span>
+    <span class="p">};</span>
+    <span class="ss">Namespace =</span> <span class="p">{</span>
+      <span class="ss">argocd =</span> <span class="p">{</span> <span class="p">};</span>
+    <span class="p">};</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/applications.nix">&lt;n1x/modules/applications.nix&gt;</a></li>
+</ul>
+<h2 id="applicationsnamesyncpolicyautomatedprune">applications.&lt;name&gt;.syncPolicy.automated.prune</h2>
+<p>Specifies if resources should be pruned during auto-syncing.</p>
+<p><strong><em>Type:</em></strong>
+null or boolean</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="no">null</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/applications.nix">&lt;n1x/modules/applications.nix&gt;</a></li>
+</ul>
+<h2 id="applicationsnamesyncpolicyautomatedselfheal">applications.&lt;name&gt;.syncPolicy.automated.selfHeal</h2>
+<p>Specifies if partial app sync should be executed when resources are changed only in target Kubernetes cluster and no git change detected.</p>
+<p><strong><em>Type:</em></strong>
+null or boolean</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="no">null</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/applications.nix">&lt;n1x/modules/applications.nix&gt;</a></li>
+</ul>
+<h2 id="n1xappofappsenable">n1x.appOfApps.enable</h2>
+<p>Whether to enable the app-of-apps application.</p>
+<p><strong><em>Type:</em></strong>
+boolean</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="no">false</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/n1x.nix">&lt;n1x/modules/n1x.nix&gt;</a></li>
+</ul>
+<h2 id="n1xappofappsname">n1x.appOfApps.name</h2>
+<p>Name of the app-of-apps applications.</p>
+<p><strong><em>Type:</em></strong>
+string</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="s2">&quot;apps&quot;</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/n1x.nix">&lt;n1x/modules/n1x.nix&gt;</a></li>
+</ul>
+<h2 id="n1xappofappsrepository">n1x.appOfApps.repository</h2>
+<p>The source repository url to put on all generated Argo CD Applications.</p>
+<p><strong><em>Type:</em></strong>
+string</p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/n1x.nix">&lt;n1x/modules/n1x.nix&gt;</a></li>
+</ul>
+<h2 id="n1xappofappsrevision">n1x.appOfApps.revision</h2>
+<p>The target revision to put on all generated Argo CD Applications.</p>
+<p><strong><em>Type:</em></strong>
+string</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="s2">&quot;HEAD&quot;</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/n1x.nix">&lt;n1x/modules/n1x.nix&gt;</a></li>
+</ul>
+<h2 id="n1xbootstrapenable">n1x.bootstrap.enable</h2>
+<p>Whether to enable the bootstrap application.</p>
+<p><strong><em>Type:</em></strong>
+boolean</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="no">false</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/n1x.nix">&lt;n1x/modules/n1x.nix&gt;</a></li>
+</ul>
+<h2 id="networkingciliumenableipv4">networking.cilium.enableIpv4</h2>
+<p>Enable IPv4 support in cilium.</p>
+<p><strong><em>Type:</em></strong>
+boolean</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="no">true</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/networking/cilium.nix">&lt;n1x/modules/networking/cilium.nix&gt;</a></li>
+</ul>
+<h2 id="networkingciliumenableipv6">networking.cilium.enableIpv6</h2>
+<p>Enable IPv6 support in cilium.</p>
+<p><strong><em>Type:</em></strong>
+boolean</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="no">false</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/networking/cilium.nix">&lt;n1x/modules/networking/cilium.nix&gt;</a></li>
+</ul>
+<h2 id="networkingciliumipammode">networking.cilium.ipamMode</h2>
+<p>IP Address Management mode for cilium to use.</p>
+<p><strong><em>Type:</em></strong>
+one of "cluster-pool", "kubernetes", "eni"</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="s2">&quot;cluster-pool&quot;</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/networking/cilium.nix">&lt;n1x/modules/networking/cilium.nix&gt;</a></li>
+</ul>
+<h2 id="networkingciliumnamespace">networking.cilium.namespace</h2>
+<p>Destination namespace for cilium.</p>
+<p><strong><em>Type:</em></strong>
+string</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="s2">&quot;kube-system&quot;</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/networking/cilium.nix">&lt;n1x/modules/networking/cilium.nix&gt;</a></li>
+</ul>
+<h2 id="networkingciliumpodcidrs">networking.cilium.podCidrs</h2>
+<p>IPv4 CIDR list range to delegate to individual nodes for IPAM.</p>
+<p><strong><em>Type:</em></strong>
+list of string</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="p">[</span><span class="s2">&quot;10.0.0.0/8&quot;</span><span class="p">]</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/networking/cilium.nix">&lt;n1x/modules/networking/cilium.nix&gt;</a></li>
+</ul>
+<h2 id="networkingciliumpodcidrsv6">networking.cilium.podCidrsv6</h2>
+<p>IPv6 CIDR mask size to delegate to individual nodes for IPAM.</p>
+<p><strong><em>Type:</em></strong>
+list of string</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="p">[</span><span class="s2">&quot;fd00::/104&quot;</span><span class="p">]</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/networking/cilium.nix">&lt;n1x/modules/networking/cilium.nix&gt;</a></li>
+</ul>
+<h2 id="networkingciliumpolicyauditmode">networking.cilium.policyAuditMode</h2>
+<p>Enable policy audit mode in cilium.</p>
+<p><strong><em>Type:</em></strong>
+boolean</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="no">false</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/networking/cilium.nix">&lt;n1x/modules/networking/cilium.nix&gt;</a></li>
+</ul>
+<h2 id="networkingciliumpolicyenforcementmode">networking.cilium.policyEnforcementMode</h2>
+<p>Policy enforcement mode for cilium to use.</p>
+<p>See: https://docs.cilium.io/en/latest/security/policy/intro/#policy-enforcement-modes</p>
+<p><strong><em>Type:</em></strong>
+one of "default", "always", "never"</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="s2">&quot;default&quot;</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/networking/cilium.nix">&lt;n1x/modules/networking/cilium.nix&gt;</a></li>
+</ul>
+<h2 id="networkingciliumvalues">networking.cilium.values</h2>
+<p>Values to pass on to the cilium helm chart.</p>
+<p><strong><em>Type:</em></strong>
+attribute set of anything</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="p">{</span> <span class="p">}</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/networking/cilium.nix">&lt;n1x/modules/networking/cilium.nix&gt;</a></li>
+</ul>
+<h2 id="networkingcni">networking.cni</h2>
+<p>Which CNI application to enable or none if <code>null</code>.</p>
+<p><strong><em>Type:</em></strong>
+null or one of "cilium", "flannel"</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="no">null</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/networking">&lt;n1x/modules/networking&gt;</a></li>
+</ul>
+<h2 id="networkingflannelbackend">networking.flannel.backend</h2>
+<p>Backend for kube-flannel.</p>
+<p>See: https://github.com/flannel-io/flannel/blob/master/Documentation/backends.md</p>
+<p><strong><em>Type:</em></strong>
+one of "vxlan", "host-gw", "wireguard", "udp"</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="s2">&quot;vxlan&quot;</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/networking/flannel.nix">&lt;n1x/modules/networking/flannel.nix&gt;</a></li>
+</ul>
+<h2 id="networkingflannelbackendport">networking.flannel.backendPort</h2>
+<p>Port used by the backend. 0 means default value (VXLAN: 8472, Wireguard: 51821, UDP: 8285).</p>
+<p><strong><em>Type:</em></strong>
+16 bit unsigned integer; between 0 and 65535 (both inclusive)</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="mi">0</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/networking/flannel.nix">&lt;n1x/modules/networking/flannel.nix&gt;</a></li>
+</ul>
+<h2 id="networkingflannelnamespace">networking.flannel.namespace</h2>
+<p>Destination namespace for flannel.</p>
+<p><strong><em>Type:</em></strong>
+string</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="s2">&quot;kube-flannel&quot;</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/networking/flannel.nix">&lt;n1x/modules/networking/flannel.nix&gt;</a></li>
+</ul>
+<h2 id="networkingflannelpodcidr">networking.flannel.podCidr</h2>
+<p>IPv4 CIDR to delegate to pods.</p>
+<p><strong><em>Type:</em></strong>
+string</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="s2">&quot;10.244.0.0/16&quot;</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/networking/flannel.nix">&lt;n1x/modules/networking/flannel.nix&gt;</a></li>
+</ul>
+<h2 id="networkingflannelpodcidrv6">networking.flannel.podCidrv6</h2>
+<p>IPv6 CIDR to delete got pods.</p>
+<p><strong><em>Type:</em></strong>
+string</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="s2">&quot;&quot;</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/networking/flannel.nix">&lt;n1x/modules/networking/flannel.nix&gt;</a></li>
+</ul>
+<h2 id="networkingflannelvalues">networking.flannel.values</h2>
+<p>Values to pass on to the flannel helm chart.</p>
+<p><strong><em>Type:</em></strong>
+attribute set of anything</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="p">{</span> <span class="p">}</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/networking/flannel.nix">&lt;n1x/modules/networking/flannel.nix&gt;</a></li>
+</ul>
+<h2 id="servicesargocdenable">services.argocd.enable</h2>
+<p>Whether to enable argocd.</p>
+<p><strong><em>Type:</em></strong>
+boolean</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="no">false</span></code></p>
+<p><strong><em>Example:</em></strong>
+<code class="highlight"><span class="no">true</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/services/argocd.nix">&lt;n1x/modules/services/argocd.nix&gt;</a></li>
+</ul>
+<h2 id="servicesargocdingressenable">services.argocd.ingress.enable</h2>
+<p>Create an ingress for argocd-server.</p>
+<p><strong><em>Type:</em></strong>
+boolean</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="no">false</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/services/argocd.nix">&lt;n1x/modules/services/argocd.nix&gt;</a></li>
+</ul>
+<h2 id="servicesargocdingresshosts">services.argocd.ingress.hosts</h2>
+<p>Hostnames to put in the argocd-server ingress.</p>
+<p><strong><em>Type:</em></strong>
+list of string</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="p">[</span> <span class="p">]</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/services/argocd.nix">&lt;n1x/modules/services/argocd.nix&gt;</a></li>
+</ul>
+<h2 id="servicesargocdingressingressclass">services.argocd.ingress.ingressClass</h2>
+<p>Ingress class to set on the ingress for argocd-server.</p>
+<p><strong><em>Type:</em></strong>
+string</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="s2">&quot;&quot;</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/services/argocd.nix">&lt;n1x/modules/services/argocd.nix&gt;</a></li>
+</ul>
+<h2 id="servicesargocdn1xpluginenable">services.argocd.n1xPlugin.enable</h2>
+<p>Whether to automatically add the n1x config management plugin to Argo CD.</p>
+<p><strong><em>Type:</em></strong>
+boolean</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="no">true</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/services/argocd.nix">&lt;n1x/modules/services/argocd.nix&gt;</a></li>
+</ul>
+<h2 id="servicesargocdn1xpluginimage">services.argocd.n1xPlugin.image</h2>
+<p>The image to use in the Argo CD config management plugin sidecar.</p>
+<p><strong><em>Type:</em></strong>
+string</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="s2">&quot;granra/n1x-argocd-cmp-plugin:latest&quot;</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/services/argocd.nix">&lt;n1x/modules/services/argocd.nix&gt;</a></li>
+</ul>
+<h2 id="servicesargocdnamespace">services.argocd.namespace</h2>
+<p>Destination namespace for argocd.</p>
+<p><strong><em>Type:</em></strong>
+string</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="s2">&quot;argocd&quot;</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/services/argocd.nix">&lt;n1x/modules/services/argocd.nix&gt;</a></li>
+</ul>
+<h2 id="servicesargocdvalues">services.argocd.values</h2>
+<p>Values to pass on to the argo-cd helm chart.</p>
+<p><strong><em>Type:</em></strong>
+attribute set of anything</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="p">{</span> <span class="p">}</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/services/argocd.nix">&lt;n1x/modules/services/argocd.nix&gt;</a></li>
+</ul>
+<h2 id="servicescloudflare-operatorenable">services.cloudflare-operator.enable</h2>
+<p>Whether to enable cloudflare-operator.</p>
+<p><strong><em>Type:</em></strong>
+boolean</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="no">false</span></code></p>
+<p><strong><em>Example:</em></strong>
+<code class="highlight"><span class="no">true</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/services/cloudflare-operator.nix">&lt;n1x/modules/services/cloudflare-operator.nix&gt;</a></li>
+</ul>
+<h2 id="servicescloudflare-operatornamespace">services.cloudflare-operator.namespace</h2>
+<p>Destination namespace for cloudflare-operator.</p>
+<p><strong><em>Type:</em></strong>
+string</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="s2">&quot;cloudflare-operator&quot;</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/services/cloudflare-operator.nix">&lt;n1x/modules/services/cloudflare-operator.nix&gt;</a></li>
+</ul>
+<h2 id="servicesk8s-gatewaydomain">services.k8s-gateway.domain</h2>
+<p>Delegated domain for k8s_gateway to use.</p>
+<p><strong><em>Type:</em></strong>
+string</p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/services/k8s-gateway.nix">&lt;n1x/modules/services/k8s-gateway.nix&gt;</a></li>
+</ul>
+<h2 id="servicesk8s-gatewayenable">services.k8s-gateway.enable</h2>
+<p>Whether to enable k8s-gateway.</p>
+<p><strong><em>Type:</em></strong>
+boolean</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="no">false</span></code></p>
+<p><strong><em>Example:</em></strong>
+<code class="highlight"><span class="no">true</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/services/k8s-gateway.nix">&lt;n1x/modules/services/k8s-gateway.nix&gt;</a></li>
+</ul>
+<h2 id="servicesk8s-gatewaynamespace">services.k8s-gateway.namespace</h2>
+<p>Destination namespace for k8s-gateway.</p>
+<p><strong><em>Type:</em></strong>
+string</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="s2">&quot;k8s-gateway&quot;</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/services/k8s-gateway.nix">&lt;n1x/modules/services/k8s-gateway.nix&gt;</a></li>
+</ul>
+<h2 id="servicesk8s-gatewayvalues">services.k8s-gateway.values</h2>
+<p>Values to pass on to the k8s-gateway helm chart.</p>
+<p><strong><em>Type:</em></strong>
+attribute set of anything</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="p">{</span> <span class="p">}</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/services/k8s-gateway.nix">&lt;n1x/modules/services/k8s-gateway.nix&gt;</a></li>
+</ul>
+<h2 id="servicestailscale-operatorenable">services.tailscale-operator.enable</h2>
+<p>Whether to enable tailscale-operator.</p>
+<p><strong><em>Type:</em></strong>
+boolean</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="no">false</span></code></p>
+<p><strong><em>Example:</em></strong>
+<code class="highlight"><span class="no">true</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/services/tailscale-operator.nix">&lt;n1x/modules/services/tailscale-operator.nix&gt;</a></li>
+</ul>
+<h2 id="servicestailscale-operatornamespace">services.tailscale-operator.namespace</h2>
+<p>Destination namespace for tailscale-operator.</p>
+<p><strong><em>Type:</em></strong>
+string</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="s2">&quot;tailscale-operator&quot;</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/services/tailscale-operator.nix">&lt;n1x/modules/services/tailscale-operator.nix&gt;</a></li>
+</ul>
+<h2 id="servicestailscale-operatorvalues">services.tailscale-operator.values</h2>
+<p>Values to pass on to the tailscale-operator helm chart.</p>
+<p><strong><em>Type:</em></strong>
+attribute set of anything</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="p">{</span> <span class="p">}</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/services/tailscale-operator.nix">&lt;n1x/modules/services/tailscale-operator.nix&gt;</a></li>
+</ul>
+<h2 id="servicestraefikenable">services.traefik.enable</h2>
+<p>Whether to enable traefik.</p>
+<p><strong><em>Type:</em></strong>
+boolean</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="no">false</span></code></p>
+<p><strong><em>Example:</em></strong>
+<code class="highlight"><span class="no">true</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/services/traefik.nix">&lt;n1x/modules/services/traefik.nix&gt;</a></li>
+</ul>
+<h2 id="servicestraefikingressclassenable">services.traefik.ingressClass.enable</h2>
+<p>Enable creating an ingress class resource for traefik.</p>
+<p><strong><em>Type:</em></strong>
+boolean</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="no">true</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/services/traefik.nix">&lt;n1x/modules/services/traefik.nix&gt;</a></li>
+</ul>
+<h2 id="servicestraefikingressclassisdefaultclass">services.traefik.ingressClass.isDefaultClass</h2>
+<p>Set traefik ingress class as the default one.</p>
+<p><strong><em>Type:</em></strong>
+boolean</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="no">true</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/services/traefik.nix">&lt;n1x/modules/services/traefik.nix&gt;</a></li>
+</ul>
+<h2 id="servicestraefikingressclassname">services.traefik.ingressClass.name</h2>
+<p>The name of the ingress class for traefik.</p>
+<p><strong><em>Type:</em></strong>
+string</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="s2">&quot;traefik&quot;</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/services/traefik.nix">&lt;n1x/modules/services/traefik.nix&gt;</a></li>
+</ul>
+<h2 id="servicestraefiknamespace">services.traefik.namespace</h2>
+<p>Destination namespace for traefik.</p>
+<p><strong><em>Type:</em></strong>
+string</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="s2">&quot;traefik&quot;</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/services/traefik.nix">&lt;n1x/modules/services/traefik.nix&gt;</a></li>
+</ul>
+<h2 id="servicestraefikvalues">services.traefik.values</h2>
+<p>Values to pass on to the traefik helm chart.</p>
+<p><strong><em>Type:</em></strong>
+attribute set of anything</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="p">{</span> <span class="p">}</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/services/traefik.nix">&lt;n1x/modules/services/traefik.nix&gt;</a></li>
+</ul>
+<h2 id="storagecsinfsdrivername">storage.csi.nfs.driverName</h2>
+<p>Name of the driver when deployed in the Kubernetes cluster.</p>
+<p><strong><em>Type:</em></strong>
+string</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="s2">&quot;nfs.csi.k8s.io&quot;</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/storage/nfs.nix">&lt;n1x/modules/storage/nfs.nix&gt;</a></li>
+</ul>
+<h2 id="storagecsinfsenable">storage.csi.nfs.enable</h2>
+<p>Whether to enable nfs-csi-driver.</p>
+<p><strong><em>Type:</em></strong>
+boolean</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="no">false</span></code></p>
+<p><strong><em>Example:</em></strong>
+<code class="highlight"><span class="no">true</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/storage/nfs.nix">&lt;n1x/modules/storage/nfs.nix&gt;</a></li>
+</ul>
+<h2 id="storagecsinfsnamespace">storage.csi.nfs.namespace</h2>
+<p>Destination namespace for csi-driver-nfs.</p>
+<p><strong><em>Type:</em></strong>
+string</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="s2">&quot;kube-system&quot;</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/storage/nfs.nix">&lt;n1x/modules/storage/nfs.nix&gt;</a></li>
+</ul>
+<h2 id="storagecsinfsstorageclassenable">storage.csi.nfs.storageClass.enable</h2>
+<p>Automatically create a StorageClass for csi-driver-nfs.</p>
+<p><strong><em>Type:</em></strong>
+boolean</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="no">false</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/storage/nfs.nix">&lt;n1x/modules/storage/nfs.nix&gt;</a></li>
+</ul>
+<h2 id="storagecsinfsstorageclassmountoptions">storage.csi.nfs.storageClass.mountOptions</h2>
+<p>Extra options to pass on when mounting the NFS share.</p>
+<p><strong><em>Type:</em></strong>
+list of string</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="p">[</span> <span class="p">]</span></code></p>
+<p><strong><em>Example:</em></strong>
+<code class="highlight"><span class="p">[</span><span class="s2">&quot;nfsvers=4.1&quot;</span><span class="p">]</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/storage/nfs.nix">&lt;n1x/modules/storage/nfs.nix&gt;</a></li>
+</ul>
+<h2 id="storagecsinfsstorageclassname">storage.csi.nfs.storageClass.name</h2>
+<p>Name of the StorageClass to create for csi-driver-nfs.</p>
+<p><strong><em>Type:</em></strong>
+string</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="s2">&quot;nfs-csi&quot;</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/storage/nfs.nix">&lt;n1x/modules/storage/nfs.nix&gt;</a></li>
+</ul>
+<h2 id="storagecsinfsstorageclassreclaimpolicy">storage.csi.nfs.storageClass.reclaimPolicy</h2>
+<p>Reclaim policy to use for the StorageClass for csi-driver-nfs.</p>
+<p><strong><em>Type:</em></strong>
+one of "Delete", "Retain"</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="s2">&quot;Delete&quot;</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/storage/nfs.nix">&lt;n1x/modules/storage/nfs.nix&gt;</a></li>
+</ul>
+<h2 id="storagecsinfsstorageclassserver">storage.csi.nfs.storageClass.server</h2>
+<p>NFS server address to use to connect to.</p>
+<p><strong><em>Type:</em></strong>
+string</p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/storage/nfs.nix">&lt;n1x/modules/storage/nfs.nix&gt;</a></li>
+</ul>
+<h2 id="storagecsinfsstorageclassshare">storage.csi.nfs.storageClass.share</h2>
+<p>NFS share on the server to use for csi-driver-nfs.</p>
+<p><strong><em>Type:</em></strong>
+string</p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/storage/nfs.nix">&lt;n1x/modules/storage/nfs.nix&gt;</a></li>
+</ul>
+<h2 id="storagecsinfsstorageclassvolumebindingmode">storage.csi.nfs.storageClass.volumeBindingMode</h2>
+<p>VolumeBindingMode indicates how PersistentVolumeClaims should be provisioned and bound.</p>
+<p><strong><em>Type:</em></strong>
+one of "Immediate", "WaitForFirstConsumer"</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="s2">&quot;Immediate&quot;</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/storage/nfs.nix">&lt;n1x/modules/storage/nfs.nix&gt;</a></li>
+</ul>
+<h2 id="storagecsinfsvalues">storage.csi.nfs.values</h2>
+<p>Values to pass on to the csi-driver-nfs chart.</p>
+<p><strong><em>Type:</em></strong>
+attribute set of anything</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="p">{</span> <span class="p">}</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/storage/nfs.nix">&lt;n1x/modules/storage/nfs.nix&gt;</a></li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate"], "search": "../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      
+    
+  </body>
+</html>
