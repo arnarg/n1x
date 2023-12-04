@@ -37,6 +37,35 @@ in {
         default = "HEAD";
         description = "The target revision to put on all generated Argo CD Applications.";
       };
+      syncPolicy = {
+        automated = {
+          prune = mkOption {
+            type = types.bool;
+            default = false;
+            description = "Specifies if resources should be pruned during auto-syncing.";
+          };
+          selfHeal = mkOption {
+            type = types.bool;
+            default = false;
+            description = "Specifies if partial app sync should be executed when resources are changed only in target Kubernetes cluster and no git change detected.";
+          };
+        };
+      };
+    };
+
+    defaultSyncPolicy = {
+      automated = {
+        prune = mkOption {
+          type = types.bool;
+          default = false;
+          description = "Specifies if resources should be pruned during auto-syncing. This is the default value for all applications if not explicitly set.";
+        };
+        selfHeal = mkOption {
+          type = types.bool;
+          default = false;
+          description = "Specifies if partial app sync should be executed when resources are changed only in target Kubernetes cluster and no git change detected. This is the default value for all applications if not explicitly set.";
+        };
+      };
     };
   };
 
@@ -70,6 +99,10 @@ in {
               destination = {
                 server = "https://kubernetes.default.svc";
                 namespace = config.services.argocd.namespace;
+              };
+              syncPolicy.automated = {
+                prune = config.n1x.appOfApps.syncPolicy.automated.prune;
+                selfHeal = config.n1x.appOfApps.syncPolicy.automated.selfHeal;
               };
             };
           };
@@ -105,6 +138,10 @@ in {
                 destination = {
                   server = "https://kubernetes.default.svc";
                   namespace = app.namespace;
+                };
+                syncPolicy.automated = {
+                  prune = app.syncPolicy.automated.prune;
+                  selfHeal = app.syncPolicy.automated.selfHeal;
                 };
               };
             }

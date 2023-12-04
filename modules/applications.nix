@@ -1,10 +1,10 @@
-{lib, ...}: let
+{
+  lib,
+  config,
+  ...
+}: let
   appOpts = with lib;
-    {
-      name,
-      config,
-      ...
-    }: {
+    {name, ...}: {
       options = {
         enable = mkOption {
           type = types.bool;
@@ -44,13 +44,13 @@
         syncPolicy = {
           automated = {
             prune = mkOption {
-              type = types.nullOr types.bool;
-              default = null;
+              type = types.bool;
+              default = config.n1x.defaultSyncPolicy.automated.prune;
               description = "Specifies if resources should be pruned during auto-syncing.";
             };
             selfHeal = mkOption {
-              type = types.nullOr types.bool;
-              default = null;
+              type = types.bool;
+              default = config.n1x.defaultSyncPolicy.automated.selfHeal;
               description = "Specifies if partial app sync should be executed when resources are changed only in target Kubernetes cluster and no git change detected.";
             };
           };
