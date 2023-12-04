@@ -537,8 +537,36 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#n1xappofappssyncpolicyautomatedprune" class="md-nav__link">
+    n1x.appOfApps.syncPolicy.automated.prune
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#n1xappofappssyncpolicyautomatedselfheal" class="md-nav__link">
+    n1x.appOfApps.syncPolicy.automated.selfHeal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#n1xbootstrapenable" class="md-nav__link">
     n1x.bootstrap.enable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#n1xdefaultsyncpolicyautomatedprune" class="md-nav__link">
+    n1x.defaultSyncPolicy.automated.prune
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#n1xdefaultsyncpolicyautomatedselfheal" class="md-nav__link">
+    n1x.defaultSyncPolicy.automated.selfHeal
   </a>
   
 </li>
@@ -749,6 +777,34 @@
         <li class="md-nav__item">
   <a href="#servicesk8s-gatewayvalues" class="md-nav__link">
     services.k8s-gateway.values
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicessops-secrets-operatoragekeysecret" class="md-nav__link">
+    services.sops-secrets-operator.ageKeySecret
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicessops-secrets-operatorenable" class="md-nav__link">
+    services.sops-secrets-operator.enable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicessops-secrets-operatornamespace" class="md-nav__link">
+    services.sops-secrets-operator.namespace
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicessops-secrets-operatorvalues" class="md-nav__link">
+    services.sops-secrets-operator.values
   </a>
   
 </li>
@@ -1041,8 +1097,36 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#n1xappofappssyncpolicyautomatedprune" class="md-nav__link">
+    n1x.appOfApps.syncPolicy.automated.prune
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#n1xappofappssyncpolicyautomatedselfheal" class="md-nav__link">
+    n1x.appOfApps.syncPolicy.automated.selfHeal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#n1xbootstrapenable" class="md-nav__link">
     n1x.bootstrap.enable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#n1xdefaultsyncpolicyautomatedprune" class="md-nav__link">
+    n1x.defaultSyncPolicy.automated.prune
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#n1xdefaultsyncpolicyautomatedselfheal" class="md-nav__link">
+    n1x.defaultSyncPolicy.automated.selfHeal
   </a>
   
 </li>
@@ -1253,6 +1337,34 @@
         <li class="md-nav__item">
   <a href="#servicesk8s-gatewayvalues" class="md-nav__link">
     services.k8s-gateway.values
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicessops-secrets-operatoragekeysecret" class="md-nav__link">
+    services.sops-secrets-operator.ageKeySecret
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicessops-secrets-operatorenable" class="md-nav__link">
+    services.sops-secrets-operator.enable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicessops-secrets-operatornamespace" class="md-nav__link">
+    services.sops-secrets-operator.namespace
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicessops-secrets-operatorvalues" class="md-nav__link">
+    services.sops-secrets-operator.values
   </a>
   
 </li>
@@ -1561,9 +1673,9 @@ attribute set of attribute set of attribute set of anything</p>
 <h2 id="applicationsnamesyncpolicyautomatedprune">applications.&lt;name&gt;.syncPolicy.automated.prune<a class="headerlink" href="#applicationsnamesyncpolicyautomatedprune" title="Permanent link">#</a></h2>
 <p>Specifies if resources should be pruned during auto-syncing.</p>
 <p><strong><em>Type:</em></strong>
-null or boolean</p>
+boolean</p>
 <p><strong><em>Default:</em></strong>
-<code class="highlight"><span class="no">null</span></code></p>
+<code class="highlight"><span class="no">false</span></code></p>
 <p><strong><em>Declared by:</em></strong></p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/applications.nix">&lt;n1x/modules/applications.nix&gt;</a></li>
@@ -1571,9 +1683,9 @@ null or boolean</p>
 <h2 id="applicationsnamesyncpolicyautomatedselfheal">applications.&lt;name&gt;.syncPolicy.automated.selfHeal<a class="headerlink" href="#applicationsnamesyncpolicyautomatedselfheal" title="Permanent link">#</a></h2>
 <p>Specifies if partial app sync should be executed when resources are changed only in target Kubernetes cluster and no git change detected.</p>
 <p><strong><em>Type:</em></strong>
-null or boolean</p>
+boolean</p>
 <p><strong><em>Default:</em></strong>
-<code class="highlight"><span class="no">null</span></code></p>
+<code class="highlight"><span class="no">false</span></code></p>
 <p><strong><em>Declared by:</em></strong></p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/applications.nix">&lt;n1x/modules/applications.nix&gt;</a></li>
@@ -1616,8 +1728,48 @@ string</p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/n1x.nix">&lt;n1x/modules/n1x.nix&gt;</a></li>
 </ul>
+<h2 id="n1xappofappssyncpolicyautomatedprune">n1x.appOfApps.syncPolicy.automated.prune<a class="headerlink" href="#n1xappofappssyncpolicyautomatedprune" title="Permanent link">#</a></h2>
+<p>Specifies if resources should be pruned during auto-syncing.</p>
+<p><strong><em>Type:</em></strong>
+boolean</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="no">false</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/n1x.nix">&lt;n1x/modules/n1x.nix&gt;</a></li>
+</ul>
+<h2 id="n1xappofappssyncpolicyautomatedselfheal">n1x.appOfApps.syncPolicy.automated.selfHeal<a class="headerlink" href="#n1xappofappssyncpolicyautomatedselfheal" title="Permanent link">#</a></h2>
+<p>Specifies if partial app sync should be executed when resources are changed only in target Kubernetes cluster and no git change detected.</p>
+<p><strong><em>Type:</em></strong>
+boolean</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="no">false</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/n1x.nix">&lt;n1x/modules/n1x.nix&gt;</a></li>
+</ul>
 <h2 id="n1xbootstrapenable">n1x.bootstrap.enable<a class="headerlink" href="#n1xbootstrapenable" title="Permanent link">#</a></h2>
 <p>Whether to enable the bootstrap application.</p>
+<p><strong><em>Type:</em></strong>
+boolean</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="no">false</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/n1x.nix">&lt;n1x/modules/n1x.nix&gt;</a></li>
+</ul>
+<h2 id="n1xdefaultsyncpolicyautomatedprune">n1x.defaultSyncPolicy.automated.prune<a class="headerlink" href="#n1xdefaultsyncpolicyautomatedprune" title="Permanent link">#</a></h2>
+<p>Specifies if resources should be pruned during auto-syncing. This is the default value for all applications if not explicitly set.</p>
+<p><strong><em>Type:</em></strong>
+boolean</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="no">false</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/n1x.nix">&lt;n1x/modules/n1x.nix&gt;</a></li>
+</ul>
+<h2 id="n1xdefaultsyncpolicyautomatedselfheal">n1x.defaultSyncPolicy.automated.selfHeal<a class="headerlink" href="#n1xdefaultsyncpolicyautomatedselfheal" title="Permanent link">#</a></h2>
+<p>Specifies if partial app sync should be executed when resources are changed only in target Kubernetes cluster and no git change detected. This is the default value for all applications if not explicitly set.</p>
 <p><strong><em>Type:</em></strong>
 boolean</p>
 <p><strong><em>Default:</em></strong>
@@ -1931,6 +2083,58 @@ attribute set of anything</p>
 <p><strong><em>Declared by:</em></strong></p>
 <ul>
 <li><a href="https://github.com/arnarg/n1x/blob/main/modules/services/k8s-gateway.nix">&lt;n1x/modules/services/k8s-gateway.nix&gt;</a></li>
+</ul>
+<h2 id="servicessops-secrets-operatoragekeysecret">services.sops-secrets-operator.ageKeySecret<a class="headerlink" href="#servicessops-secrets-operatoragekeysecret" title="Permanent link">#</a></h2>
+<p>Name of a secret containing an age private key to use to decrypt SOPS secrets. Secret needs to contain a <code>keys.txt</code> data key.</p>
+<p>Example:
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Secret</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">age-keys</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sops-secrets-operator</span>
+<span class="nt">stringData</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">keys.txt</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">    </span><span class="no">AGE-SECRET-KEY-123...</span>
+</code></pre></div></p>
+<p><strong><em>Type:</em></strong>
+null or string</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="no">null</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/services/sops-secrets-operator.nix">&lt;n1x/modules/services/sops-secrets-operator.nix&gt;</a></li>
+</ul>
+<h2 id="servicessops-secrets-operatorenable">services.sops-secrets-operator.enable<a class="headerlink" href="#servicessops-secrets-operatorenable" title="Permanent link">#</a></h2>
+<p>Whether to enable sops-secrets-operator.</p>
+<p><strong><em>Type:</em></strong>
+boolean</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="no">false</span></code></p>
+<p><strong><em>Example:</em></strong>
+<code class="highlight"><span class="no">true</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/services/sops-secrets-operator.nix">&lt;n1x/modules/services/sops-secrets-operator.nix&gt;</a></li>
+</ul>
+<h2 id="servicessops-secrets-operatornamespace">services.sops-secrets-operator.namespace<a class="headerlink" href="#servicessops-secrets-operatornamespace" title="Permanent link">#</a></h2>
+<p>Destination namespace for sops-secrets-operator.</p>
+<p><strong><em>Type:</em></strong>
+string</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="s2">&quot;sops-secrets-operator&quot;</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/services/sops-secrets-operator.nix">&lt;n1x/modules/services/sops-secrets-operator.nix&gt;</a></li>
+</ul>
+<h2 id="servicessops-secrets-operatorvalues">services.sops-secrets-operator.values<a class="headerlink" href="#servicessops-secrets-operatorvalues" title="Permanent link">#</a></h2>
+<p>Values to pass on to the sops-secrets-operator helm chart.</p>
+<p><strong><em>Type:</em></strong>
+attribute set of anything</p>
+<p><strong><em>Default:</em></strong>
+<code class="highlight"><span class="p">{</span> <span class="p">}</span></code></p>
+<p><strong><em>Declared by:</em></strong></p>
+<ul>
+<li><a href="https://github.com/arnarg/n1x/blob/main/modules/services/sops-secrets-operator.nix">&lt;n1x/modules/services/sops-secrets-operator.nix&gt;</a></li>
 </ul>
 <h2 id="servicestailscale-operatorenable">services.tailscale-operator.enable<a class="headerlink" href="#servicestailscale-operatorenable" title="Permanent link">#</a></h2>
 <p>Whether to enable tailscale-operator.</p>
