@@ -17,14 +17,11 @@ in {
     mkServiceOptions "cloudflare-operator" "cloudflare-operator" {};
 
   config = lib.mkIf cfg.enable {
-    applications."${cfg.name}" = {
+    applications."${cfg.name}" = lib.mkKustomizeApplication {
+      inherit (cfg) name namespace extraYAMLs;
       description = "A Kubernetes Operator to create and manage Cloudflare Tunnels and DNS records for (HTTP/TCP/UDP*) Service Resources.";
-      namespace = cfg.namespace;
-      resources = lib.kube.renderKustomization {
-        inherit src;
-        inherit (cfg) extraYAMLs name namespace;
-        path = "config/default";
-      };
+      kustomization = src;
+      path = "config/default";
     };
   };
 }

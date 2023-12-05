@@ -94,6 +94,12 @@
             ```
           '';
         };
+        meta = mkOption {
+          type = types.attrsOf types.str;
+          default = {};
+          description = "Internal metadata";
+          internal = true;
+        };
       };
     };
 in {

@@ -26,18 +26,16 @@ in {
     };
 
   config = lib.mkIf cfg.enable {
-    applications."${cfg.name}" = {
+    applications."${cfg.name}" = lib.mkHelmApplication {
+      inherit chart;
+      inherit (cfg) name namespace extraYAMLs;
       description = "A CoreDNS plugin to resolve all types of external Kubernetes resources.";
-      namespace = cfg.namespace;
-      resources = lib.kube.renderHelmChart {
-        inherit chart;
-        inherit (cfg) extraYAMLs name namespace;
-        values =
-          {
-            domain = cfg.domain;
-          }
-          // cfg.values;
-      };
+
+      values =
+        {
+          domain = cfg.domain;
+        }
+        // cfg.values;
     };
   };
 }

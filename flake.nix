@@ -37,6 +37,7 @@
         default = n1xPackages.n1x;
         pluginImage = n1xPackages.pluginImage;
         docs = {
+          evaled = docs.evaled;
           opts = docs.opts;
           md = docs.md;
           html = docs.html;

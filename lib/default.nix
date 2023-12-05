@@ -17,6 +17,17 @@ pkgs: nixpkgslib: kubelib: let
       resources) {};
 
   n1xLib = rec {
+    # Thin wrapper around nix-kube-generators' `downloadHelmChart`
+    # to store parameters in `_meta`.
+    downloadHelmChart = {
+      repo,
+      chart,
+      version,
+      chartHash,
+    } @ args:
+      (kubelib.downloadHelmChart args)
+      // {_meta = args;};
+
     renderHelmChart = {extraYAMLs ? [], ...} @ args:
       renderResourceList
       extraYAMLs
@@ -103,6 +114,71 @@ in
           };
         }
         // rest;
+
+    mkHelmApplication = {
+      description,
+      name,
+      namespace,
+      chart,
+      values ? {},
+      extraResources ? null,
+      extraYAMLs ? [],
+    }: let
+      rendered = n1xLib.renderHelmChart {
+        inherit chart name namespace values extraYAMLs;
+      };
+
+      merged =
+        if !isNull extraResources
+        then nixpkgslib.mkMerge [rendered extraResources]
+        else rendered;
+    in {
+      inherit description namespace;
+      resources = merged;
+      meta = with nixpkgslib;
+        {
+          _type = "helm";
+        }
+        // (
+          if (hasAttrByPath ["_meta"] chart)
+          then {
+            repository = chart._meta.repo;
+            chart = chart._meta.chart;
+            version = chart._meta.version;
+            appVersion = chart._meta.appVersion or "unknown";
+          }
+          else {}
+        );
+    };
+
+    mkKustomizeApplication = {
+      description,
+      name,
+      namespace,
+      kustomization,
+      path,
+      extraResources ? null,
+      extraYAMLs ? [],
+    }: let
+      rendered = n1xLib.renderKustomization {
+        inherit name namespace extraYAMLs path;
+        src = kustomization;
+      };
+
+      merged =
+        if !isNull extraResources
+        then nixpkgslib.mkMerge [rendered extraResources]
+        else rendered;
+    in {
+      inherit description namespace;
+      resources = merged;
+      meta = {
+        _type = "kustomize";
+        source = kustomization.meta.homepage;
+        path = path;
+        revision = kustomization.rev;
+      };
+    };
 
     kube = kubelib // n1xLib;
   })

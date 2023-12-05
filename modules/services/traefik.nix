@@ -39,14 +39,10 @@ in {
     };
 
   config = lib.mkIf cfg.enable {
-    applications."${cfg.name}" = {
+    applications."${cfg.name}" = lib.mkHelmApplication {
+      inherit chart;
+      inherit (cfg) name namespace extraYAMLs values;
       description = "A Traefik based Kubernetes ingress controller.";
-      namespace = cfg.namespace;
-      resources = lib.kube.renderHelmChart {
-        inherit chart;
-        inherit (cfg) extraYAMLs name namespace;
-        values = cfg.values;
-      };
     };
   };
 }

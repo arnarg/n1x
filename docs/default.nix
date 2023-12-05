@@ -37,7 +37,7 @@
       };
   };
 
-  optsMd' = with lib;
+  optsMd = with lib;
     concatStringsSep "\n" ([
         ''
           # Configuration Options
@@ -92,9 +92,11 @@
         '')
       optionsDoc.optionsNix));
 
-  optsMd = pkgs.writeText "n1x-options.md" optsMd';
-
   docsHtml = pkgs.stdenv.mkDerivation {
+    inherit appsMd optsMd;
+
+    passAsFile = ["appsMd" "optsMd"];
+
     name = "n1x-docs";
 
     src = lib.cleanSource ./..;
@@ -104,7 +106,8 @@
     phases = ["unpackPhase" "patchPhase" "buildPhase"];
 
     patchPhase = ''
-      cp "${optsMd}" docs/options.md
+      cat $optsMdPath > docs/options.md
+      cat $appsMdPath > docs/applications.md
 
       cat <<EOF > mkdocs.yml
         site_name: n1x
@@ -137,6 +140,7 @@
         markdown_extensions:
         - toc:
             permalink: "#"
+            toc_depth: 3
         - admonition
         - pymdownx.highlight
         - pymdownx.inlinehilite
@@ -148,6 +152,7 @@
           - 'Getting Started': user_guide/getting_started.md
           - 'App of Apps': user_guide/app_of_apps.md
         - Reference:
+          - 'Applications': applications.md
           - 'Configuration Options': options.md
       EOF
     '';
@@ -157,7 +162,76 @@
       python -m mkdocs build
     '';
   };
+
+  apps' = lib.evalModules {
+    modules = import ../modules/modules.nix {};
+    specialArgs = {
+      inherit pkgs;
+      lib =
+        lib
+        // {
+          # Overridde mkServiceOptions so that all
+          # applications are enabled by default.
+          mkServiceOptions = n: ns: rest:
+            lib.mkServiceOptions n ns (rest
+              // {
+                enable = lib.mkOption {
+                  type = lib.types.bool;
+                  default = true;
+                };
+              });
+        };
+    };
+  };
+
+  applications = with lib;
+    mapAttrs (
+      name: value:
+        value.meta
+        // {
+          description = value.description;
+        }
+    )
+    (removeAttrs apps'.config.applications ["apps" "bootstrap"]);
+
+  appsMd = with lib;
+    concatStringsSep "\n" ([
+        ''
+          # Applications
+
+        ''
+      ]
+      ++ (mapAttrsToList (
+          n: meta:
+            ''
+              ## ${n}
+
+              ${meta.description}
+
+              ***Type:***
+              `${meta._type}`
+
+            ''
+            + (optionalString ((meta._type == "helm") && (hasAttrByPath ["repository"] meta)) ''
+              ***Chart:***
+
+              Repository: `${meta.repository}`
+
+              Chart: `${meta.chart}`
+
+              Version: `${meta.version}`
+
+            '')
+            + (optionalString (meta._type == "kustomize") ''
+              ***Kustomization:***
+
+              URL: `${meta.source}//${meta.path}?rev=${meta.revision}`
+
+            '')
+        )
+        applications));
 in {
+  evaled = applications;
   opts = optionsDoc.optionsNix;
   md = optsMd;
   html = docsHtml;

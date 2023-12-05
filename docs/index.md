@@ -33,25 +33,65 @@ As a bonus of all the applications being defined in a single (modular) configura
 {config, ...}: let
   domain = "mydomain.com";
 in {
-  # Enable Cilium CNI application
+  # Enable Cilium CNI application.
   networking.cni = "cilium";
 
-  # Configure Cilium to use the default k3s pod cidr
+  # Configure Cilium to use the default k3s pod cidr.
   networking.cilium.podCidrs = ["10.42.0.0/16"];
 
-  # Enable traefik as ingress controller
+  # Enable traefik as ingress controller.
   services.traefik.enable = true;
 
-  # Enable Argo CD
-  services.argocd.enable = true;
-
-  # Create an Ingress for Argo CD web UI
-  services.argocd.ingress = {
+  # Enable Argo CD.
+  services.argocd = {
     enable = true;
-    hosts = ["argocd.${domain}"];
 
-    # Reference an option from another service's option
-    ingressClass = config.services.traefik.ingressClass.name;
+    # Create an Ingress for Argo CD web UI.
+    ingress = {
+      enable = true;
+      hosts = ["argocd.${domain}"];
+
+      # Reference an option from another service's options.
+      ingressClass = config.services.traefik.ingressClass.name;
+    };
+
+    # Pass-through values to Argo CD Helm chart.
+    values = {
+      # Traefik will terminate TLS traffic.
+      # Disable HTTPS in argocd-server.
+      configs.params."server.insecure" = "true";
+    };
+
+    # You can extend the application with arbitrary resources
+    # in YAML.
+    # They will be parsed and merged with the final application
+    # output.
+    extraYAMLs = [
+      ''
+        apiVersion: networking.k8s.io/v1
+        kind: NetworkPolicy
+        metadata:
+          name: allow-traefik-ingress
+          namespace: ${config.services.argocd.namespace}
+        spec:
+          podSelector:
+            matchLabels:
+              app.kubernetes.io/name: argocd-server
+          policyTypes:
+          - Ingress
+          ingress:
+          - from:
+            - namespaceSelector:
+                matchLabels:
+                  kubernetes.io/metadata.name: ${config.services.traefik.namespace}
+              podSelector:
+                matchLabels:
+                  app.kubernetes.io/name: traefik
+            ports:
+            - protocol: TCP
+              port: 8080
+      ''
+    ];
   };
 }
 ```

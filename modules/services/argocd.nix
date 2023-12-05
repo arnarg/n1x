@@ -51,59 +51,57 @@ in {
     };
 
   config = lib.mkIf cfg.enable {
-    applications."${cfg.name}" = {
+    applications."${cfg.name}" = lib.mkHelmApplication {
+      inherit chart;
+      inherit (cfg) name namespace extraYAMLs;
       description = "Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.";
-      namespace = cfg.namespace;
-      resources = lib.kube.renderHelmChart {
-        inherit chart;
-        inherit (cfg) extraYAMLs name namespace;
-        values =
-          {
-            server.ingress = {
-              enabled = cfg.ingress.enable;
-              hosts = cfg.ingress.hosts;
-              ingressClassName = cfg.ingress.ingressClass;
-            };
-          }
-          // (lib.optionalAttrs cfg.n1xPlugin.enable {
-            repoServer.extraContainers = [
-              {
-                name = "n1x-plugin";
-                command = [
-                  "/var/run/argocd/argocd-cmp-server"
-                  "--config-dir-path"
-                  "/lib/argocd/cmp-server/config"
-                ];
-                image = cfg.n1xPlugin.image;
-                securityContext = {
-                  runAsNonRoot = true;
-                  runAsUser = 999;
-                };
-                volumeMounts = [
-                  {
-                    mountPath = "/var/run/argocd";
-                    name = "var-files";
-                  }
-                  {
-                    mountPath = "/home/argocd/cmp-server/plugins";
-                    name = "plugins";
-                  }
-                  {
-                    mountPath = "/tmp";
-                    name = "cmp-tmp";
-                  }
-                ];
-              }
-            ];
-            repoServer.volumes = [
-              {
-                name = "cmp-tmp";
-                emptyDir = {};
-              }
-            ];
-          })
-          // cfg.values;
-      };
+
+      values =
+        {
+          server.ingress = {
+            enabled = cfg.ingress.enable;
+            hosts = cfg.ingress.hosts;
+            ingressClassName = cfg.ingress.ingressClass;
+          };
+        }
+        // (lib.optionalAttrs cfg.n1xPlugin.enable {
+          repoServer.extraContainers = [
+            {
+              name = "n1x-plugin";
+              command = [
+                "/var/run/argocd/argocd-cmp-server"
+                "--config-dir-path"
+                "/lib/argocd/cmp-server/config"
+              ];
+              image = cfg.n1xPlugin.image;
+              securityContext = {
+                runAsNonRoot = true;
+                runAsUser = 999;
+              };
+              volumeMounts = [
+                {
+                  mountPath = "/var/run/argocd";
+                  name = "var-files";
+                }
+                {
+                  mountPath = "/home/argocd/cmp-server/plugins";
+                  name = "plugins";
+                }
+                {
+                  mountPath = "/tmp";
+                  name = "cmp-tmp";
+                }
+              ];
+            }
+          ];
+          repoServer.volumes = [
+            {
+              name = "cmp-tmp";
+              emptyDir = {};
+            }
+          ];
+        })
+        // cfg.values;
     };
   };
 }

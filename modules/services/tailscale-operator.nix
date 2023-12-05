@@ -26,14 +26,12 @@ in {
     };
 
   config = lib.mkIf cfg.enable {
-    applications."${cfg.name}" = {
+    applications."${cfg.name}" = lib.mkHelmApplication {
+      inherit chart;
+      inherit (cfg) name namespace extraYAMLs;
       description = "Operator to expose ingresses and services on Tailscale.";
-      namespace = cfg.namespace;
-      resources = lib.kube.renderHelmChart {
-        inherit chart;
-        inherit (cfg) extraYAMLs name namespace;
-        values = cfg.values;
-      };
+
+      values = cfg.values;
     };
   };
 }

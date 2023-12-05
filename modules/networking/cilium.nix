@@ -69,21 +69,19 @@ in {
     };
 
   config = lib.mkIf cfg.enable {
-    applications.cilium = {
+    applications.cilium = lib.mkHelmApplication {
+      inherit chart;
+      inherit (cfg) name namespace extraYAMLs;
       description = "eBPF-based Networking, Security, and Observability.";
-      namespace = cfg.namespace;
-      resources = lib.kube.renderHelmChart {
-        inherit chart;
-        inherit (cfg) extraYAMLs name namespace;
-        values =
-          {
-            ipam.mode = cfg.ipamMode;
-            ipam.operator.clusterPoolIPv4PodCIDRList = cfg.podCidrs;
-            policyEnforcementMode = cfg.policyEnforcementMode;
-            policyAuditMode = cfg.policyAuditMode;
-          }
-          // cfg.values;
-      };
+
+      values =
+        {
+          ipam.mode = cfg.ipamMode;
+          ipam.operator.clusterPoolIPv4PodCIDRList = cfg.podCidrs;
+          policyEnforcementMode = cfg.policyEnforcementMode;
+          policyAuditMode = cfg.policyAuditMode;
+        }
+        // cfg.values;
     };
 
     # If ArgoCD is enabled we want to set resource exclusion for

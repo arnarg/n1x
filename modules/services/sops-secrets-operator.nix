@@ -41,33 +41,31 @@ in {
     };
 
   config = lib.mkIf cfg.enable {
-    applications."${cfg.name}" = {
+    applications."${cfg.name}" = lib.mkHelmApplication {
+      inherit chart;
+      inherit (cfg) name namespace extraYAMLs;
       description = "Operator which manages Kubernetes Secret Resources created from user defined SopsSecrets CRs.";
-      namespace = cfg.namespace;
-      resources = lib.kube.renderHelmChart {
-        inherit chart;
-        inherit (cfg) extraYAMLs name namespace;
-        values =
-          (lib.optionalAttrs (!builtins.isNull cfg.ageKeySecret) {
-            # Mount secret with age keys to operator pod
-            secretsAsFiles = [
-              {
-                name = "keys";
-                mountPath = "/var/lib/sops/age";
-                secretName = cfg.ageKeySecret;
-              }
-            ];
 
-            # Tell the operator pod where to read age keys
-            extraEnv = [
-              {
-                name = "SOPS_AGE_KEY_FILE";
-                value = "/var/lib/sops/age/key.txt";
-              }
-            ];
-          })
-          // cfg.values;
-      };
+      values =
+        (lib.optionalAttrs (!builtins.isNull cfg.ageKeySecret) {
+          # Mount secret with age keys to operator pod
+          secretsAsFiles = [
+            {
+              name = "keys";
+              mountPath = "/var/lib/sops/age";
+              secretName = cfg.ageKeySecret;
+            }
+          ];
+
+          # Tell the operator pod where to read age keys
+          extraEnv = [
+            {
+              name = "SOPS_AGE_KEY_FILE";
+              value = "/var/lib/sops/age/key.txt";
+            }
+          ];
+        })
+        // cfg.values;
     };
   };
 }

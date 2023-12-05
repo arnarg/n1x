@@ -52,21 +52,19 @@ in {
     };
 
   config = lib.mkIf cfg.enable {
-    applications.flannel = {
+    applications.flannel = lib.mkHelmApplication {
+      inherit chart;
+      inherit (cfg) name namespace extraYAMLs;
       description = "eBPF-based Networking, Security, and Observability.";
-      namespace = cfg.namespace;
-      resources = lib.kube.renderHelmChart {
-        inherit chart;
-        inherit (cfg) extraYAMLs name namespace;
-        values =
-          {
-            podCidr = cfg.podCidr;
-            podCidrv6 = cfg.podCidrv6;
-            flannel.backend = cfg.backend;
-            flannel.backendPort = cfg.backendPort;
-          }
-          // cfg.values;
-      };
+
+      values =
+        {
+          podCidr = cfg.podCidr;
+          podCidrv6 = cfg.podCidrv6;
+          flannel.backend = cfg.backend;
+          flannel.backendPort = cfg.backendPort;
+        }
+        // cfg.values;
     };
   };
 }

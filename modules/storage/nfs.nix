@@ -63,30 +63,27 @@ in {
     };
 
   config = lib.mkIf cfg.enable {
-    applications."${cfg.name}" = {
+    applications."${cfg.name}" = lib.mkHelmApplication {
+      inherit chart;
+      inherit (cfg) name namespace extraYAMLs;
       description = "CSI Kubernetes storage driver to use NFS server for persistent volumes.";
-      namespace = cfg.namespace;
-      resources = lib.mkMerge [
-        (lib.kube.renderHelmChart {
-          inherit chart;
-          inherit (cfg) extraYAMLs name namespace;
-          values =
-            {
-              driver.name = cfg.driverName;
-            }
-            // cfg.values;
-        })
-        (lib.optionalAttrs cfg.storageClass.enable {
-          "storage.k8s.io/v1".StorageClass."${cfg.storageClass.name}" = {
-            provisioner = cfg.driverName;
-            parameters.server = cfg.storageClass.server;
-            parameters.share = cfg.storageClass.share;
-            reclaimPolicy = cfg.storageClass.reclaimPolicy;
-            volumeBindingMode = cfg.storageClass.volumeBindingMode;
-            mountOptions = cfg.storageClass.mountOptions;
-          };
-        })
-      ];
+
+      values =
+        {
+          driver.name = cfg.driverName;
+        }
+        // cfg.values;
+
+      extraResources = lib.optionalAttrs cfg.storageClass.enable {
+        "storage.k8s.io/v1".StorageClass."${cfg.storageClass.name}" = {
+          provisioner = cfg.driverName;
+          parameters.server = cfg.storageClass.server;
+          parameters.share = cfg.storageClass.share;
+          reclaimPolicy = cfg.storageClass.reclaimPolicy;
+          volumeBindingMode = cfg.storageClass.volumeBindingMode;
+          mountOptions = cfg.storageClass.mountOptions;
+        };
+      };
     };
   };
 }
