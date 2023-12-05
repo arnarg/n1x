@@ -1,7 +1,6 @@
 {
   lib,
   config,
-  pkgs,
   ...
 }: let
   cfg = config.services.sops-secrets-operator;
@@ -42,13 +41,12 @@ in {
     };
 
   config = lib.mkIf cfg.enable {
-    applications.sops-secrets-operator = {
+    applications."${cfg.name}" = {
       description = "Operator which manages Kubernetes Secret Resources created from user defined SopsSecrets CRs.";
       namespace = cfg.namespace;
       resources = lib.kube.renderHelmChart {
         inherit chart;
-        name = "sops-secrets-operator";
-        namespace = cfg.namespace;
+        inherit (cfg) extraYAMLs name namespace;
         values =
           (lib.optionalAttrs (!builtins.isNull cfg.ageKeySecret) {
             # Mount secret with age keys to operator pod

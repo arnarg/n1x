@@ -63,10 +63,12 @@
             ***Example:***
           ''
           + (
-            if (hasPrefix "attribute set" opt.type)
+            if
+              (hasPrefix "attribute set" opt.type)
+              || (hasPrefix "list of" opt.type)
             then ''
 
-              ``` nix
+              ```nix
               ${opt.example.text}
               ```
 

@@ -1,16 +1,26 @@
 pkgs: nixpkgslib: kubelib: let
-  renderResourceList = ress:
+  renderResourceList = extraYAMLs: ress: let
+    parsedYAMLs =
+      nixpkgslib.flatten
+      (map
+        kubelib.fromYAML
+        extraYAMLs);
+
+    resources = ress ++ parsedYAMLs;
+  in
     nixpkgslib.attrsets.updateManyAttrsByPath (builtins.map (
         res: {
           path = [res.apiVersion res.kind res.metadata.name];
           update = _: builtins.removeAttrs res ["apiVersion" "kind"];
         }
       )
-      ress) {};
+      resources) {};
 
   n1xLib = rec {
-    renderHelmChart = args:
-      renderResourceList (kubelib.fromHelm args);
+    renderHelmChart = {extraYAMLs ? [], ...} @ args:
+      renderResourceList
+      extraYAMLs
+      (kubelib.fromHelm (removeAttrs args ["extraYAMLs"]));
 
     buildKustomization = {
       name,
@@ -35,12 +45,13 @@ pkgs: nixpkgslib: kubelib: let
         '';
       };
 
-    renderKustomization = args:
-      pkgs.lib.pipe args [
+    renderKustomization = {extraYAMLs ? [], ...} @ args:
+      pkgs.lib.pipe
+      (removeAttrs args ["extraYAMLs"]) [
         buildKustomization
         builtins.readFile
         kubelib.fromYAML
-        renderResourceList
+        (renderResourceList extraYAMLs)
       ];
   };
 in
@@ -49,10 +60,46 @@ in
       with nixpkgslib;
         {
           enable = mkEnableOption name;
+          name = mkOption {
+            type = types.str;
+            default = name;
+            description = "Name of the application for ${name}.";
+          };
           namespace = mkOption {
             type = types.str;
             default = namespace;
             description = "Destination namespace for ${name}.";
+          };
+          extraYAMLs = mkOption {
+            type = types.listOf types.lines;
+            default = [];
+            example = [
+              ''
+                apiVersion: v1
+                kind: Namespace
+                metadata:
+                  name: ${namespace}
+              ''
+              ''
+                apiVersion: v1
+                kind: ConfigMap
+                metadata:
+                  name: my-config
+                  namespace: ${namespace}
+                ---
+                apiVersion: v1
+                kind: ConfigMap
+                metadata:
+                  name: my-files
+                  namespace: ${namespace}
+                data:
+                  file.txt: |
+                    some data here.
+              ''
+            ];
+            description = ''
+              Extra resources defined in YAML that will be parsed and merged with the rest of the resources.
+            '';
           };
         }
         // rest;

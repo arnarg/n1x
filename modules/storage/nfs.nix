@@ -12,70 +12,64 @@
     chartHash = "sha256-iceFWy9kaLeXXiMPeUlaHybagqIn/VE+pM8Uf3jyp0s=";
   };
 in {
-  options.storage.csi.nfs = with lib; {
-    enable = mkEnableOption "nfs-csi-driver";
-    namespace = mkOption {
-      type = types.str;
-      default = "kube-system";
-      description = "Destination namespace for csi-driver-nfs.";
-    };
-    driverName = mkOption {
-      type = types.str;
-      default = "nfs.csi.k8s.io";
-      description = "Name of the driver when deployed in the Kubernetes cluster.";
-    };
-    storageClass = {
-      enable = mkOption {
-        type = types.bool;
-        default = false;
-        description = "Automatically create a StorageClass for csi-driver-nfs.";
-      };
-      name = mkOption {
+  options.storage.csi.nfs = with lib;
+    mkServiceOptions "csi-driver-nfs" "kube-system" {
+      driverName = mkOption {
         type = types.str;
-        default = "nfs-csi";
-        description = "Name of the StorageClass to create for csi-driver-nfs.";
+        default = "nfs.csi.k8s.io";
+        description = "Name of the driver when deployed in the Kubernetes cluster.";
       };
-      server = mkOption {
-        type = types.str;
-        description = "NFS server address to use to connect to.";
+      storageClass = {
+        enable = mkOption {
+          type = types.bool;
+          default = false;
+          description = "Automatically create a StorageClass for csi-driver-nfs.";
+        };
+        name = mkOption {
+          type = types.str;
+          default = "nfs-csi";
+          description = "Name of the StorageClass to create for csi-driver-nfs.";
+        };
+        server = mkOption {
+          type = types.str;
+          description = "NFS server address to use to connect to.";
+        };
+        share = mkOption {
+          type = types.str;
+          description = "NFS share on the server to use for csi-driver-nfs.";
+        };
+        reclaimPolicy = mkOption {
+          type = types.enum ["Delete" "Retain"];
+          default = "Delete";
+          description = "Reclaim policy to use for the StorageClass for csi-driver-nfs.";
+        };
+        volumeBindingMode = mkOption {
+          type = types.enum ["Immediate" "WaitForFirstConsumer"];
+          default = "Immediate";
+          description = "VolumeBindingMode indicates how PersistentVolumeClaims should be provisioned and bound.";
+        };
+        mountOptions = mkOption {
+          type = types.listOf types.str;
+          default = [];
+          example = ["nfsvers=4.1"];
+          description = "Extra options to pass on when mounting the NFS share.";
+        };
       };
-      share = mkOption {
-        type = types.str;
-        description = "NFS share on the server to use for csi-driver-nfs.";
-      };
-      reclaimPolicy = mkOption {
-        type = types.enum ["Delete" "Retain"];
-        default = "Delete";
-        description = "Reclaim policy to use for the StorageClass for csi-driver-nfs.";
-      };
-      volumeBindingMode = mkOption {
-        type = types.enum ["Immediate" "WaitForFirstConsumer"];
-        default = "Immediate";
-        description = "VolumeBindingMode indicates how PersistentVolumeClaims should be provisioned and bound.";
-      };
-      mountOptions = mkOption {
-        type = types.listOf types.str;
-        default = [];
-        example = ["nfsvers=4.1"];
-        description = "Extra options to pass on when mounting the NFS share.";
+      values = mkOption {
+        type = types.attrsOf types.anything;
+        default = {};
+        description = "Values to pass on to the csi-driver-nfs chart.";
       };
     };
-    values = mkOption {
-      type = types.attrsOf types.anything;
-      default = {};
-      description = "Values to pass on to the csi-driver-nfs chart.";
-    };
-  };
 
   config = lib.mkIf cfg.enable {
-    applications.csi-driver-nfs = {
+    applications."${cfg.name}" = {
       description = "CSI Kubernetes storage driver to use NFS server for persistent volumes.";
       namespace = cfg.namespace;
       resources = lib.mkMerge [
         (lib.kube.renderHelmChart {
-          name = "csi-driver-nfs";
-          namespace = cfg.namespace;
-          chart = chart;
+          inherit chart;
+          inherit (cfg) extraYAMLs name namespace;
           values =
             {
               driver.name = cfg.driverName;

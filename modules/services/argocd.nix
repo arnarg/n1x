@@ -51,13 +51,12 @@ in {
     };
 
   config = lib.mkIf cfg.enable {
-    applications.argocd = {
+    applications."${cfg.name}" = {
       description = "Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.";
       namespace = cfg.namespace;
       resources = lib.kube.renderHelmChart {
-        name = "argocd";
-        namespace = cfg.namespace;
-        chart = chart;
+        inherit chart;
+        inherit (cfg) extraYAMLs name namespace;
         values =
           {
             server.ingress = {

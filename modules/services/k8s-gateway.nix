@@ -26,13 +26,12 @@ in {
     };
 
   config = lib.mkIf cfg.enable {
-    applications.k8s-gateway = {
+    applications."${cfg.name}" = {
       description = "A CoreDNS plugin to resolve all types of external Kubernetes resources.";
       namespace = cfg.namespace;
       resources = lib.kube.renderHelmChart {
         inherit chart;
-        name = "k8s-gateway";
-        namespace = cfg.namespace;
+        inherit (cfg) extraYAMLs name namespace;
         values =
           {
             domain = cfg.domain;

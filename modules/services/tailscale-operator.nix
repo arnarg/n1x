@@ -26,13 +26,12 @@ in {
     };
 
   config = lib.mkIf cfg.enable {
-    applications.tailscale-operator = {
+    applications."${cfg.name}" = {
       description = "Operator to expose ingresses and services on Tailscale.";
       namespace = cfg.namespace;
       resources = lib.kube.renderHelmChart {
         inherit chart;
-        name = "tailscale-operator";
-        namespace = cfg.namespace;
+        inherit (cfg) extraYAMLs name namespace;
         values = cfg.values;
       };
     };
