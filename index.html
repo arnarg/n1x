@@ -322,19 +322,6 @@
     n1x
   </a>
   
-    <nav class="md-nav" aria-label="n1x">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#example-configuration" class="md-nav__link">
-    Example Configuration
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
       </ul>
@@ -505,6 +492,26 @@
   
   
     <li class="md-nav__item">
+      <a href="applications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Applications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="options/" class="md-nav__link">
         
   
@@ -578,19 +585,6 @@
   <a href="#n1x_1" class="md-nav__link">
     n1x
   </a>
-  
-    <nav class="md-nav" aria-label="n1x">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#example-configuration" class="md-nav__link">
-    Example Configuration
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -672,27 +666,67 @@
 <div class="highlight"><pre><span></span><code><span class="p">{</span>config<span class="p">,</span> <span class="o">...</span><span class="p">}:</span> <span class="k">let</span>
   <span class="ss">domain =</span> <span class="s2">&quot;mydomain.com&quot;</span><span class="p">;</span>
 <span class="k">in</span> <span class="p">{</span>
-  <span class="c1"># Enable Cilium CNI application</span>
+  <span class="c1"># Enable Cilium CNI application.</span>
   networking<span class="o">.</span><span class="ss">cni =</span> <span class="s2">&quot;cilium&quot;</span><span class="p">;</span>
 
-  <span class="c1"># Configure Cilium to use the default k3s pod cidr</span>
+  <span class="c1"># Configure Cilium to use the default k3s pod cidr.</span>
   networking<span class="o">.</span>cilium<span class="o">.</span><span class="ss">podCidrs =</span> <span class="p">[</span><span class="s2">&quot;10.42.0.0/16&quot;</span><span class="p">];</span>
 
-  <span class="c1"># Enable traefik as ingress controller</span>
+  <span class="c1"># Enable traefik as ingress controller.</span>
   services<span class="o">.</span>traefik<span class="o">.</span><span class="ss">enable =</span> <span class="no">true</span><span class="p">;</span>
 
-  <span class="c1"># Enable Argo CD</span>
-  services<span class="o">.</span>argocd<span class="o">.</span><span class="ss">enable =</span> <span class="no">true</span><span class="p">;</span>
-
-  <span class="c1"># Create an Ingress for Argo CD web UI</span>
-  services<span class="o">.</span>argocd<span class="o">.</span><span class="ss">ingress =</span> <span class="p">{</span>
+  <span class="c1"># Enable Argo CD.</span>
+  services<span class="o">.</span><span class="ss">argocd =</span> <span class="p">{</span>
     <span class="ss">enable =</span> <span class="no">true</span><span class="p">;</span>
-    <span class="ss">hosts =</span> <span class="p">[</span><span class="s2">&quot;argocd.</span><span class="si">${</span>domain<span class="si">}</span><span class="s2">&quot;</span><span class="p">];</span>
 
-    <span class="c1"># Reference an option from another service&#39;s option</span>
-    <span class="ss">ingressClass =</span> config<span class="o">.</span>services<span class="o">.</span>traefik<span class="o">.</span>ingressClass<span class="o">.</span>name<span class="p">;</span>
-  <span class="p">};</span>
-<span class="p">}</span>
+    <span class="c1"># Create an Ingress for Argo CD web UI.</span>
+    <span class="ss">ingress =</span> <span class="p">{</span>
+      <span class="ss">enable =</span> <span class="no">true</span><span class="p">;</span>
+      <span class="ss">hosts =</span> <span class="p">[</span><span class="s2">&quot;argocd.</span><span class="si">${</span>domain<span class="si">}</span><span class="s2">&quot;</span><span class="p">];</span>
+
+      <span class="c1"># Reference an option from another service&#39;s options.</span>
+      <span class="ss">ingressClass =</span> config<span class="o">.</span>services<span class="o">.</span>traefik<span class="o">.</span>ingressClass<span class="o">.</span>name<span class="p">;</span>
+    <span class="p">};</span>
+
+    <span class="c1"># Pass-through values to Argo CD Helm chart.</span>
+    <span class="ss">values =</span> <span class="p">{</span>
+      <span class="c1"># Traefik will terminate TLS traffic.</span>
+      <span class="c1"># Disable HTTPS in argocd-server.</span>
+      configs<span class="o">.</span>params<span class="o">.</span><span class="s2">&quot;server.insecure&quot;</span> <span class="o">=</span> <span class="s2">&quot;true&quot;</span><span class="p">;</span>
+    <span class="p">};</span>
+
+    <span class="c1"># You can extend the application with arbitrary resources</span>
+    <span class="c1"># in YAML.</span>
+    <span class="c1"># They will be parsed and merged with the final application</span>
+    <span class="c1"># output.</span>
+    <span class="ss">extraYAMLs =</span> <span class="p">[</span>
+      <span class="s1">&#39;&#39;</span>
+<span class="s1">        apiVersion: networking.k8s.io/v1</span>
+<span class="s1">        kind: NetworkPolicy</span>
+<span class="s1">        metadata:</span>
+<span class="s1">          name: allow-traefik-ingress</span>
+<span class="s1">          namespace: </span><span class="si">${</span>config<span class="o">.</span>services<span class="o">.</span>argocd<span class="o">.</span>namespace<span class="si">}</span>
+<span class="s1">        spec:</span>
+<span class="s1">          podSelector:</span>
+<span class="s1">            matchLabels:</span>
+<span class="s1">              app.kubernetes.io/name: argocd-server</span>
+<span class="s1">          policyTypes:</span>
+<span class="s1">          - Ingress</span>
+<span class="s1">          ingress:</span>
+<span class="s1">          - from:</span>
+<span class="s1">            - namespaceSelector:</span>
+<span class="s1">                matchLabels:</span>
+<span class="s1">                  kubernetes.io/metadata.name: </span><span class="si">${</span>config<span class="o">.</span>services<span class="o">.</span>traefik<span class="o">.</span>namespace<span class="si">}</span>
+<span class="s1">              podSelector:</span>
+<span class="s1">                matchLabels:</span>
+<span class="s1">                  app.kubernetes.io/name: traefik</span>
+<span class="s1">            ports:</span>
+<span class="s1">            - protocol: TCP</span>
+<span class="s1">              port: 8080</span>
+<span class="s1">      </span><span class="se">&#39;&#39;</span>
+<span class="s1">    ];</span>
+<span class="s1">  };</span>
+<span class="s1">}</span>
 </code></pre></div>
 <h2 id="non-goals">Non Goals<a class="headerlink" href="#non-goals" title="Permanent link">#</a></h2>
 <h3 id="typed-resource-definitions">Typed Resource Definitions<a class="headerlink" href="#typed-resource-definitions" title="Permanent link">#</a></h3>
