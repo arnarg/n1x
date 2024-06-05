@@ -1,3 +1,7 @@
+# Archived
+
+I have moved on to [nixidy](https://github.com/arnarg/nixidy).
+
 # n1x
 
 Configure your Kubernetes cluster like it's NixOS.
